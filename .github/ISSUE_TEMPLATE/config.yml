@@ -1,0 +1,10 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Community Discussions
+    url: https://github.com/JOLT-dailyAi/workflow-execution-monetization-starter-kit/discussions
+    about: Ask questions and discuss workflow monetization strategies
+  - name: 📧 Direct Support
+    url: mailto:your-email@domain.com
+    about: For urgent issues or private support requests
+  - name: 🛒 Purchase Template
+    url: https://gumroad.com/l/your-template-link
