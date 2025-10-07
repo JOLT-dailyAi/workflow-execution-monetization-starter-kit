@@ -1,0 +1,88 @@
+/* ============================================
+   FLOATING WIDGETS - Sticker Style (GIF only)
+   ============================================ */
+
+/* Discord Floating Button */
+.discord-floating-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 70px;
+  height: 70px;
+  background: none;            /* transparent, no solid circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  text-decoration: none;
+}
+
+.discord-floating-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Sticker (GIF) */
+.discord-floating-btn img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  pointer-events: none;        /* keep clicks on button, not image */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .discord-floating-btn {
+    width: 56px;
+    height: 56px;
+    bottom: 15px;
+    left: 15px;
+  }
+  
+  .discord-floating-btn img {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* GitHub Floating Button */
+.github-floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;                 /* Opposite side of Discord */
+  width: 70px;
+  height: 70px;
+  background: none;            /* transparent, no solid circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  text-decoration: none;
+}
+
+.github-floating-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Sticker (GIF) */
+.github-floating-btn img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .github-floating-btn {
+    width: 56px;
+    height: 56px;
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .github-floating-btn img {
+    width: 56px;
+    height: 56px;
+  }
+}
