@@ -1,3 +1,29 @@
+/*
+=============================================================================
+CUSTOMIZATION CHECKLIST - improved-vpn-detection.js
+=============================================================================
+OPTIONAL CHANGES:
+☐ Line 32: Adjust CONFIDENCE_THRESHOLD (default: 40) - lower = more sensitive
+☐ Line 31: Adjust TIMEOUT (default: 5000ms) for detection speed vs accuracy
+
+ADVANCED CUSTOMIZATION (Optional):
+☐ Modify testUrls in testRequestPatterns() if those services are blocked
+☐ Add/remove VPN IP patterns in hasVPNIPPattern() for your region
+☐ Adjust suspiciousResolutions in analyzeScreenResolution() 
+
+NO CHANGES NEEDED:
+✓ WebRTC detection, latency testing, browser fingerprinting work as-is
+✓ Cookie manager with browser-specific instructions included
+✓ All anti-abuse measures work out of the box
+✓ Automatically exported to window.ImprovedVPNDetection and window.ImprovedCookieManager
+
+USAGE:
+✓ Already integrated with free-trial.js - no setup required
+✓ Detection runs automatically when user clicks "Try once for free"
+=============================================================================
+*/
+
+
 // More Sensitive VPN Detection - Better at catching modern VPNs
 class SensitiveVPNDetection {
     constructor() {
