@@ -1,18 +1,13 @@
 // Configuration
+// TODO: Replace these URLs with your actual Cloudflare Worker endpoints
 const CONFIG = {
-    // Testing URL - currently active
-    // N8N_FORM_URL: 'https://jolt-dailyai.jack-of-all-traits-official.workers.dev/api/webhook-test/new-repo-request',
-    
-    // Production URL - uncomment when ready to go live
-    N8N_FORM_URL: 'https://jolt-dailyai.jack-of-all-traits-official.workers.dev/api/webhook/new-repo-request',
+    // License validation endpoint (debounced UI check - does NOT increment usage)
+    N8N_FORM_URL: 'https://your-worker.your-subdomain.workers.dev/api/webhook/new-repo-request',
     
     GITHUB_API_BASE: 'https://api.github.com/repos/',
     
-    //Test URL
-    //LICENSE_VALIDATION_ENDPOINT: 'https://jolt-dailyai.jack-of-all-traits-official.workers.dev/api/webhook-test/validate-gumroad-license-key',
-    
-    //Production URL
-    LICENSE_VALIDATION_ENDPOINT: 'https://jolt-dailyai.jack-of-all-traits-official.workers.dev/api/webhook/validate-gumroad-license-key',
+    // Main processing endpoint (validates license AND increments usage count)
+    LICENSE_VALIDATION_ENDPOINT: 'https://your-worker.your-subdomain.workers.dev/api/webhook/validate-gumroad-license-key',
     
     WEBHOOK_TIMEOUT: 300000, // 5 minutes timeout
 };
@@ -71,6 +66,7 @@ function initializeEventListeners() {
     if (licenseKeyInput) licenseKeyInput.addEventListener('input', debounce(validateLicenseKey, 2000));
     if (repoUrlInput) {
         repoUrlInput.addEventListener('input', debounce(() => {
+            // TODO: Modify this section if your workflow doesn't use GitHub URLs
             // Clean URL first
             const cleanedUrl = cleanGitHubUrl(repoUrlInput.value);
             if (cleanedUrl !== repoUrlInput.value) {
@@ -124,15 +120,18 @@ function initializeEventListeners() {
 
 // -------------------------
 // Maintenance Mode Functions
+// TODO: Adjust maintenance times for your timezone
 // -------------------------
 function getISTTime() {
+    // TODO: Modify this function for your timezone if needed
     const now = new Date();
     const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-    const ist = new Date(utc + (5.5 * 3600000));
+    const ist = new Date(utc + (5.5 * 3600000)); // IST = UTC + 5:30
     return ist;
 }
 
 function isMaintenanceTime() {
+    // TODO: Adjust maintenance window times (currently 1:05 AM - 1:15 AM IST)
     const ist = getISTTime();
     const hours = ist.getHours();
     const minutes = ist.getMinutes();
@@ -215,7 +214,7 @@ function restoreSubmitButton() {
     if (submitContainer) {
         submitContainer.innerHTML = `
             <button type="submit" class="btn-primary btn-large" id="submitBtn" disabled>
-                Analyze Repository
+                Process Request
             </button>
         `;
         
@@ -238,10 +237,10 @@ function createResponseContainer() {
     submitContainer.innerHTML = `
         <div id="responseContainer" class="response-container">
             <div class="response-header">
-                <h4>Processing Repository Analysis</h4>
+                <h4>Processing Request</h4>
                 <div class="loading-indicator">
                     <div class="spinner"></div>
-                    <span>Please wait while we analyze your repository...</span>
+                    <span>Please wait while we process your request...</span>
                 </div>
             </div>
             <div id="responseContent" class="response-content">
@@ -351,7 +350,7 @@ function resetForNewAnalysis() {
     if (submitContainer) {
         submitContainer.innerHTML = `
             <button type="submit" class="btn-primary btn-large" id="submitBtn" disabled>
-                Analyze Repository
+                Process Request
             </button>
         `;
         
@@ -370,7 +369,7 @@ function retryAnalysis() {
     if (submitContainer) {
         submitContainer.innerHTML = `
             <button type="submit" class="btn-primary btn-large" id="submitBtn" disabled>
-                Process Repository
+                Process Request
             </button>
         `;
         
@@ -416,7 +415,7 @@ function updateShowcaseDisplay() {
     if (filteredItems.length > 0) {
         // Get current data from virtual array
         const currentData = filteredItems[currentShowcaseIndex];
-        const currentTitle = currentData.title || `Repository ${currentShowcaseIndex + 1}`;
+        const currentTitle = currentData.title || `Item ${currentShowcaseIndex + 1}`;
         const currentContent = currentData.content || 'No content available';
         
         // Update first physical item with current data
@@ -614,7 +613,7 @@ async function loadShowcaseFiles() {
             // Build autocomplete data from virtual array
             autocompleteData = virtualShowcaseData.map(item => {
                 return { 
-                    title: item.title || 'Repository', 
+                    title: item.title || 'Item', 
                     keywords: extractKeywords((item.title || '') + ' ' + (item.content || '')) 
                 };
             });
@@ -644,7 +643,7 @@ async function validateLicenseKey() {
     
     if (licenseKey.startsWith('FreeTrial-')) {
         if (generatedFreeTrialKey && licenseKey === generatedFreeTrialKey) {
-            updateLicenseInfo('Free trial license - 1 analysis available', 'valid');
+            updateLicenseInfo('Free trial license - 1 execution available', 'valid');
         } else {
             updateLicenseInfo('Invalid free trial key - please generate a new one', 'invalid');
         }
@@ -708,6 +707,7 @@ async function validateLicenseKey() {
     checkFormValidity();
 }
 
+// TODO: If your workflow doesn't use GitHub URLs, replace these functions with your own validation logic
 function cleanGitHubUrl(url) {
     if (!url || typeof url !== 'string') return url;
     
@@ -755,6 +755,7 @@ function cleanGitHubUrl(url) {
 
 // -------------------------
 // Repository URL Validation
+// TODO: Replace this entire section if your workflow doesn't use GitHub repositories
 // -------------------------
 async function validateRepoUrl() {
     const repoUrlInput = document.getElementById('repoUrl');
@@ -768,7 +769,7 @@ async function validateRepoUrl() {
         return;
     }
     
-    updateUrlValidation('Checking repository access...', '');
+    updateUrlValidation('Checking input validity...', '');
     
     const result = await window.validateGitHubRepositoryAccess(url);
     updateUrlValidation(result.message, result.type);
@@ -804,7 +805,7 @@ window.validateGitHubRepositoryAccess = async function(repoUrl) {
             method: 'GET',
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
-                'User-Agent': 'GitHub-to-AI-ingester'
+                'User-Agent': 'Workflow-Execution-Service'
             },
             signal: AbortSignal.timeout(8000)
         });
@@ -815,7 +816,7 @@ window.validateGitHubRepositoryAccess = async function(repoUrl) {
             if (data.private) {
                 return { 
                     valid: false, 
-                    message: 'Repository is private. Only public repositories can be analyzed.',
+                    message: 'Repository is private. Only public repositories can be processed.',
                     type: 'invalid' 
                 };
             }
@@ -960,16 +961,17 @@ async function handleFormSubmission(e) {
         return;
     }
     
+    // TODO: Modify this payload to match your workflow's input requirements
     const payload = {
         license_key: licenseKey,
-        repository_url: repoUrl,
+        repository_url: repoUrl, // Change field names as needed for your workflow
         discord_id: discordId,
         email: trialEmail,
         trial_repository_url: trialRepoUrl,
         is_free_trial: licenseKey.startsWith('FreeTrial-'),
         timestamp: new Date().toISOString(),
         user_timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-        submission_source: 'github_ai_ingester_web'
+        submission_source: 'workflow_execution_web' // TODO: Update this identifier
     };
     
     console.log('Sending payload:', payload);
@@ -999,7 +1001,7 @@ async function handleFormSubmission(e) {
             } else {
                 displayWebhookResponse({
                     status: data.status || 'Success',
-                    message: data.message || 'Analysis request submitted successfully!',
+                    message: data.message || 'Request submitted successfully!',
                     analysisId: data.analysisId || data.analysis_id || data.requestId,
                     estimatedTime: data.estimatedTime || data.estimated_time || data.estimatedProcessingTime,
                     repositoryName: data.repositoryName || data.repository_name
@@ -1095,7 +1097,7 @@ function hideStatusMessage() {
 
 function cacheLicenseKey(key) {
     try {
-        localStorage.setItem('github_ai_license', key);
+        localStorage.setItem('workflow_license', key); // TODO: Change storage key
     } catch (e) {
         console.log('LocalStorage not available');
     }
@@ -1103,7 +1105,7 @@ function cacheLicenseKey(key) {
 
 function loadCachedLicenseKey() {
     try {
-        const cached = localStorage.getItem('github_ai_license');
+        const cached = localStorage.getItem('workflow_license'); // TODO: Change storage key
         if (cached && licenseKeyInput) {
             licenseKeyInput.value = cached;
             validateLicenseKey();
