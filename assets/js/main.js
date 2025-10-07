@@ -1,6 +1,40 @@
+/*
+=============================================================================
+CUSTOMIZATION CHECKLIST - main.js
+=============================================================================
+CRITICAL CHANGES (Site won't work without these):
+☐ Replace "YOUR_PROXY_OR_WORKER_URL" with your Cloudflare Worker URL (2 locations)
+   → N8N_FORM_URL: https://your-worker.your-subdomain.workers.dev/validate-license
+   → LICENSE_VALIDATION_ENDPOINT: https://your-worker.your-subdomain.workers.dev/process-request
+
+OPTIONAL TIMEZONE/MAINTENANCE:
+☐ Update getISTTime() function if not using IST timezone
+☐ Update isMaintenanceTime() hours if you want different maintenance window
+☐ Update maintenance display text in createMaintenanceTimer()
+
+WORKFLOW-SPECIFIC CHANGES (Only if not using GitHub repos):
+☐ Replace entire validateRepoUrl() function with your input validation
+☐ Replace cleanGitHubUrl() function with your input cleaning logic
+☐ Replace isValidGitHubUrl() function with your validation rules
+☐ Update payload fields in handleFormSubmission() to match your workflow
+☐ Update User-Agent in validateGitHubRepositoryAccess from 'Workflow-Execution-Service'
+
+STORAGE/BRANDING:
+☐ Update localStorage keys from 'workflow_license' to your preferred name
+☐ Update submission_source from 'workflow_execution_web' to your identifier
+
+NO CHANGES NEEDED:
+✓ All showcase functionality works as-is
+✓ All license validation logic works as-is
+✓ All form validation and UI states work as-is
+✓ All modal and notification systems work as-is
+=============================================================================
+*/
+
 // Configuration
 // TODO: Replace these URLs with your actual Cloudflare Worker endpoints
 const CONFIG = {
+
     // License validation endpoint (debounced UI check - does NOT increment usage)
     N8N_FORM_URL: 'https://your-worker.your-subdomain.workers.dev/api/webhook/new-repo-request',
     
