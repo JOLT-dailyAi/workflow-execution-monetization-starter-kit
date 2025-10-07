@@ -1,19 +1,27 @@
-/**
- * Cloudflare Worker: API Proxy with CORS
- * 
- * PURPOSE: 
- * - Proxies requests from static frontend (GitHub Pages) to your backend (n8n)
- * - Adds CORS headers so browser allows the requests
- * - Handles OPTIONS preflight requests
- * 
- * SETUP:
- * 1. Create new Worker at workers.cloudflare.com (free tier works)
- * 2. Paste this code
- * 3. Replace YOUR_BACKEND_URL_HERE with your n8n webhook URL
- * 4. Deploy
- * 5. Copy your worker URL (e.g., https://my-worker.workers.dev)
- * 6. Use that URL in frontend CONFIG.N8N_FORM_URL
- */
+/*
+=============================================================================
+CUSTOMIZATION CHECKLIST - webhook-handler.js
+=============================================================================
+CRITICAL CHANGES (Line 33):
+☐ Replace "YOUR_BACKEND_URL_HERE" with your n8n webhook URL
+   → Example: "https://your-instance.app.n8n.cloud/webhook/your-webhook-id"
+
+DEPLOYMENT STEPS:
+☐ Create Cloudflare Worker at workers.cloudflare.com
+☐ Paste this code into worker editor
+☐ Replace YOUR_BACKEND_URL_HERE on line 33
+☐ Deploy and copy your worker URL
+☐ Update frontend main.js CONFIG with your worker URL
+
+TESTING:
+☐ curl https://your-worker.workers.dev → "✅ API proxy is running"
+
+NO CHANGES NEEDED:
+✓ CORS headers work for any domain
+✓ All HTTP methods and error handling included
+=============================================================================
+*/
+
 
 export default {
   async fetch(request, env, ctx) {
@@ -97,11 +105,3 @@ export default {
     return new Response("✅ API proxy is running", { status: 200, headers: corsHeaders });
   }
 };
-
-/**
- * DEPLOYMENT CHECKLIST:
- * □ Replace YOUR_BACKEND_URL_HERE with your n8n instance URL
- * □ Deploy worker and copy the worker URL
- * □ Update frontend CONFIG with your worker URL
- * □ Test: curl https://your-worker.workers.dev (should return "API proxy is running")
- */
