@@ -1,7 +1,10 @@
 class FreeTrialManager {
     constructor() {
         this.config = {
-            SHOWCASE_JSON_URL: 'https://raw.githubusercontent.com/JOLT-dailyAi/GitHub-to-AI-ingester/refs/heads/main/data/showcase/Showcase.json',
+            // TODO: Replace with your showcase JSON URL (or keep relative path: 'data/showcase/Showcase.json')
+            SHOWCASE_JSON_URL: 'data/showcase/Showcase.json',
+            
+            // Anti-abuse: List of disposable email domains to block
             DISPOSABLE_EMAIL_DOMAINS: [
                 '10minutemail.com', 'tempmail.org', 'guerrillamail.com', 'mailinator.com',
                 'throwaway.email', 'temp-mail.org', 'getairmail.com', 'sharklasers.com',
@@ -55,6 +58,7 @@ class FreeTrialManager {
         const trialRepoInput = document.getElementById('trialRepoUrl');
         if (trialRepoInput) {
             trialRepoInput.addEventListener('input', this.debounce(() => {
+                // TODO: If your workflow doesn't use GitHub URLs, modify this section
                 // Clean URL first
                 const cleanedUrl = cleanGitHubUrl(trialRepoInput.value);
                 if (cleanedUrl !== trialRepoInput.value) {
@@ -297,9 +301,7 @@ class FreeTrialManager {
     }
 
     // Repository Validation
-    // -------------------------
-    // Updated Free Trial Repository Validation (Replace validateTrialRepository in free-trial.js)
-    // -------------------------
+    // TODO: Replace this entire section if your workflow doesn't use GitHub repositories
     async validateTrialRepository() {
         const repoInput = document.getElementById('trialRepoUrl');
         const validationMsg = document.getElementById('repoValidationMsg') || this.createRepoValidationElement();
@@ -413,13 +415,13 @@ class FreeTrialManager {
         const repoUrl = repoUrlInput.value.trim();
     
         if (!email || !repoUrl) {
-            this.showNotification('Please fill in both email and repository URL', 'error', 5000);
+            this.showNotification('Please fill in both email and input fields', 'error', 5000);
             return;
         }
     
         // Check if both validations passed
         if (!this.state.emailValidated || !this.state.repositoryChecked) {
-            this.showNotification('Please ensure both email and repository are valid', 'error', 5000);
+            this.showNotification('Please ensure both email and input are valid', 'error', 5000);
             return;
         }
     
@@ -488,7 +490,7 @@ class FreeTrialManager {
                 isDuplicate, 
                 repoName,
                 message: isDuplicate ? 
-                    `Repository "${repoName}" already analyzed. Free trial is for new repositories only.` : 
+                    `Repository "${repoName}" already processed. Free trial is for new repositories only.` : 
                     `Repository "${repoName}" is eligible for free trial.`
             };
         } catch (error) {
@@ -501,7 +503,6 @@ class FreeTrialManager {
         }
     }
 
-
     extractRepositoryName(repoUrl) {
         try {
             if (repoUrl.includes('github.com/')) {
@@ -512,9 +513,8 @@ class FreeTrialManager {
         } catch (error) {
             console.error('Error extracting repository name:', error);
             return null;
-            }
+        }
     }
-    
 
     // Key Generation and Storage
     async generateMonthlyFreeTrialKey(email) {
@@ -691,7 +691,6 @@ class FreeTrialManager {
         }
     }
 
-    // Add this new method around line 530, after checkCache method
     async checkUsedKeysDatabase(email) {
         try {
             const response = await fetch('data/FreeTrialKeys/UsedFreeLicenseKeys.json', {
@@ -749,7 +748,6 @@ class FreeTrialManager {
     }
 
     // UPDATED: Only populate repo URL, DO NOT auto-populate license key
-    // Replace the populateMainFormWithTrialKey function in free-trial.js
     populateMainFormWithTrialKey(freeTrialKey, repoUrl) {
         const mainRepoInput = document.getElementById('repoUrl');
         if (mainRepoInput && repoUrl) {
@@ -813,7 +811,7 @@ class FreeTrialManager {
                 font-size: 14px;
                 color: #2E7D32;
             `;
-            creditInfo.innerHTML = `<strong>Free Trial Key Generated – 1 Analysis Credit Available</strong>`;
+            creditInfo.innerHTML = `<strong>Free Trial Key Generated – 1 Execution Credit Available</strong>`;
             buttonContainer.parentNode.insertBefore(creditInfo, buttonContainer);
         }
 
@@ -847,7 +845,6 @@ class FreeTrialManager {
         copyBtn.addEventListener('click', () => this.copyKeyToClipboard(freeTrialKey, copyBtn));
     }
 }
-
 
     async copyKeyToClipboard(key, button) {
         try {
