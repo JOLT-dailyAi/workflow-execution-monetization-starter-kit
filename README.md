@@ -226,24 +226,31 @@ Complete n8n workflow that:
 ## FAQ
 
 **Q: What workflows can I monetize with this?**
+
 A: Any workflow that provides value per execution - data processing, API integrations, content generation, analysis tools, automation services.
 
 **Q: Do I need to know JavaScript?**
+
 A: Basic knowledge helpful for customization. The core system works out-of-the-box with configuration changes only.
 
 **Q: What payment processors are supported?**
+
 A: Gumroad included, Stripe integration guide provided. System is designed to work with any payment API.
 
 **Q: Can I customize the anti-abuse features?**
+
 A: Yes, all thresholds and detection methods are configurable. Documentation explains each component.
 
 **Q: Is this production-ready?**
+
 A: Yes, this exact code has processed thousands of workflow executions in production with enterprise-grade reliability.
 
 **Q: What's the difference from selling workflow templates?**
+
 A: Templates = selling the recipe (one-time). This = selling the meal (per-execution). Much more scalable revenue.
 
 **Q: Can I white-label this completely?**
+
 A: Absolutely. Remove all references to original service, add your branding, deploy under your domain.
 
 ## Technical Requirements
