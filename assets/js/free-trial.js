@@ -1,3 +1,35 @@
+/*
+=============================================================================
+CUSTOMIZATION CHECKLIST - free-trial.js
+=============================================================================
+REQUIRED CHANGES:
+☐ Update SHOWCASE_JSON_URL if using absolute URL instead of relative path
+   → Default: 'data/showcase/Showcase.json' (works as-is)
+   → If hosted elsewhere: 'https://your-domain.com/path/to/showcase.json'
+
+WORKFLOW-SPECIFIC CHANGES (Only if not using GitHub repos):
+☐ Replace validateTrialRepository() method with your input validation
+☐ Replace checkRepositoryDuplicate() method with your duplicate checking logic  
+☐ Replace extractRepositoryName() method to extract identifier from your input
+☐ Update error messages from "repository" to your input type
+
+ANTI-ABUSE CONFIGURATION (Optional):
+☐ Add/remove domains in DISPOSABLE_EMAIL_DOMAINS array
+☐ Adjust VPN detection sensitivity (advanced users only)
+
+TEXT UPDATES:
+☐ Update error messages from "repository" to your workflow terminology
+☐ Update success messages to match your workflow type
+
+NO CHANGES NEEDED:
+✓ All email validation and normalization works as-is
+✓ All cookie/consent management works as-is  
+✓ All VPN detection works as-is
+✓ All storage redundancy (localStorage, cookies, IndexedDB) works as-is
+✓ All trial key generation and validation works as-is
+=============================================================================
+*/
+
 class FreeTrialManager {
     constructor() {
         this.config = {
