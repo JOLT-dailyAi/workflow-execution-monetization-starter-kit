@@ -1,58 +1,44 @@
 [
   {
-    "title": "E-commerce Data Analysis",
-    "url": "https://example-ecommerce-site.com",
-    "description": "Comprehensive analysis of product catalog and customer behavior patterns for optimization insights.",
-    "timestamp": "2024-12-15T14:30:00Z",
-    "category": "Data Processing",
-    "tags": ["e-commerce", "analytics", "optimization"],
-    "content": "E-COMMERCE ANALYSIS REPORT\n========================================\n\nOVERVIEW\n--------\nAnalyzed 2,847 products across 15 categories\nProcessed 45,000+ customer interactions\nProcessing time: 4 minutes\n\nKEY FINDINGS\n------------\n• Top performing category: Electronics (32% of revenue)\n• Peak shopping hours: 7-9 PM weekdays  \n• Mobile traffic: 68% of total visits\n• Cart abandonment rate: 23% (industry avg: 28%)\n• Customer retention rate: 76%\n• Average order value: $127.50\n\nRECOMMENDATIONS\n---------------\n1. Optimize mobile checkout flow\n   → Reduce steps from 6 to 3\n   → Add guest checkout option\n\n2. Implement evening promotional campaigns\n   → Target 6-10 PM time slot\n   → Focus on mobile users\n\n3. Focus inventory on electronics category\n   → Increase stock by 25%\n   → Add premium product lines\n\n4. Add urgency indicators to reduce abandonment\n   → \"Only 3 left in stock\" messages\n   → Limited-time discount counters\n\nTECHNICAL METRICS\n-----------------\nData points analyzed: 127,000+\nAccuracy score: 94.2%\nProcessing efficiency: 98.7%\nAPI calls made: 2,340",
-    "metadata": {
-      "processing_time": "4 minutes",
-      "data_points": "127,000+",
-      "accuracy": "94.2%"
-    }
-  },
-  {
-    "title": "Content Marketing Optimization",
-    "url": "https://blog-example.com",
-    "description": "SEO and engagement analysis of blog content with actionable recommendations for improved reach.",
-    "timestamp": "2024-12-14T09:15:00Z",
-    "category": "Content Analysis",
-    "tags": ["seo", "content", "marketing", "engagement"],
-    "content": "CONTENT MARKETING ANALYSIS\n========================================\n\nCONTENT PERFORMANCE SUMMARY\n---------------------------\nAnalyzed: 156 blog posts over 12 months\nTotal organic traffic: 89,000 monthly visitors\nTraffic growth: +34% year-over-year\n\nTOP PERFORMING CONTENT\n----------------------\n1. \"Complete Guide to Remote Work\"\n   Views: 12,000 | Engagement: 8.2 min avg\n   \n2. \"2024 Industry Trends Forecast\" \n   Views: 8,500 | Social shares: 340\n   \n3. \"Productivity Tips for Teams\"\n   Views: 7,200 | Email signups: 180\n\nSEO INSIGHTS\n------------\n• Keyword rankings: Position 8.3 average\n• Featured snippets: 23 posts captured\n• Backlinks acquired: +147 quality links\n• Page load speed: 2.1s average\n• Core Web Vitals: All green metrics\n\nENGAGEMENT METRICS\n------------------\n• Average time on page: 4 min 32 sec\n• Bounce rate: 34% (improved from 45%)\n• Social shares: 2,340 total\n• Email signups: 890 from content\n• Comment engagement: +67% increase\n\nACTION ITEMS\n------------\n✓ Create more \"how-to\" content (highest engagement)\n✓ Optimize 12 posts for featured snippets\n✓ Implement internal linking strategy  \n✓ Develop content series on trending topics\n✓ Add video content to top-performing posts",
-    "metadata": {
-      "processing_time": "3 minutes",
-      "posts_analyzed": "156",
-      "traffic_increase": "+34%"
-    }
-  },
-  {
-    "title": "API Integration Workflow",
-    "url": "https://api-integration-example.com",
-    "description": "Automated data synchronization between CRM and marketing platforms with error handling and monitoring.",
-    "timestamp": "2024-12-13T16:45:00Z",
-    "category": "Automation",
-    "tags": ["api", "integration", "crm", "automation"],
-    "content": "API INTEGRATION ANALYSIS\n========================================\n\nINTEGRATION OVERVIEW\n--------------------\nPlatforms: Salesforce CRM ↔ HubSpot Marketing\nSync frequency: Every 15 minutes\nData flow: Bi-directional\nUptime: 99.97%\n\nDATA SYNC SUMMARY\n-----------------\n• Contacts synced: 15,847 records\n• Leads processed: 3,256 new entries\n• Deals updated: 892 opportunities\n• Custom fields mapped: 47 fields\n• Data validation rules: 31 active\n\nPERFORMANCE METRICS\n-------------------\n• Sync success rate: 99.7%\n• Average sync time: 12 seconds\n• Error rate: 0.3% (12 errors/month)\n• Data accuracy: 99.8%\n• Processing speed: 1,330 records/min\n\nERROR ANALYSIS & RESOLUTION\n---------------------------\n• Duplicate detection: 8 cases → Auto-resolved\n• Field mapping issues: 3 cases → Schema updated  \n• API rate limits: 1 case → Batching optimized\n• Network timeouts: 0 cases → Excellent stability\n\nWORKFLOW OPTIMIZATIONS IMPLEMENTED\n----------------------------------\n1. Smart batching system\n   → 40% faster processing\n   → Reduced API calls by 60%\n\n2. Advanced retry logic\n   → Exponential backoff strategy\n   → 99% error recovery rate\n\n3. Real-time monitoring dashboard\n   → Live sync status\n   → Performance analytics\n\n4. Automated error notifications\n   → Slack alerts for critical issues\n   → Email reports for daily summaries\n\nTECHNICAL IMPLEMENTATION\n------------------------\nWebhook triggers: 23 configured\nData transformations: 15 custom rules\nBackup procedures: Daily automated\nSecurity: OAuth 2.0 + encryption",
-    "metadata": {
-      "processing_time": "6 minutes",
-      "sync_success": "99.7%",
-      "records_processed": "19,995"
-    }
-  },
-  {
-    "title": "Social Media Analytics Dashboard",
-    "url": "https://social-analytics-example.com",
+    "title": "Social Media Analytics Report",
+    "url": "https://example-analytics.com",
     "description": "Multi-platform social media performance tracking with engagement insights and growth recommendations.",
     "timestamp": "2024-12-12T11:20:00Z",
     "category": "Analytics",
     "tags": ["social media", "analytics", "engagement", "growth"],
-    "content": "SOCIAL MEDIA PERFORMANCE REPORT\n========================================\n\nMULTI-PLATFORM OVERVIEW\n------------------------\nPlatforms analyzed: 5 active accounts\nTracking period: Last 90 days\nTotal reach: 2.4M impressions\nOverall engagement: +23% increase\n\nPLATFORM BREAKDOWN\n------------------\nINSTAGRAM\n• Followers: 28,400 (+12% growth)\n• Engagement rate: 4.7% (above 3.8% industry avg)\n• Best posting time: 6-8 PM weekdays\n• Top content: Behind-the-scenes videos\n\nLINKEDIN\n• Connections: 15,600 (+8% growth)\n• Post reach: 45,000 average\n• Click-through rate: 2.3%\n• Best content: Industry insights\n\nTWITTER/X\n• Followers: 12,200 (+5% growth)\n• Impressions: 180,000 monthly\n• Retweet rate: 1.8%\n• Peak activity: 12-2 PM & 7-9 PM\n\nFACEBOOK\n• Page likes: 8,900 (+3% growth)\n• Reach: 67,000 monthly\n• Engagement: 3.2%\n• Best format: Native videos\n\nTIKTOK\n• Followers: 5,200 (+45% growth!)\n• Average views: 12,000 per video\n• Engagement: 8.9% (exceptional)\n• Viral content: 3 videos >100K views\n\nCONTENT INSIGHTS\n----------------\n• Top performer: How-to videos (67% higher engagement)\n• Optimal hashtags: 5-7 per post\n• Video vs. images: 3x more engagement\n• User-generated content: 85% more authentic reach\n• Best posting frequency: 1x daily (varies by platform)\n\nGROWTH STRATEGY RECOMMENDATIONS\n-------------------------------\n1. Double down on video content production\n   → Increase by 40% across all platforms\n   → Focus on educational/tutorial format\n\n2. Optimize posting schedules\n   → Use platform-specific peak times\n   → Maintain consistent daily presence\n\n3. Enhance community engagement\n   → Respond to comments within 2 hours\n   → Create polls and interactive content\n\n4. Cross-platform content adaptation\n   → Repurpose top content for each platform\n   → Maintain platform-native formatting\n\n5. Trend monitoring & participation\n   → Weekly trend analysis\n   → Quick response to viral opportunities",
+    "content": "📱 SOCIAL MEDIA PERFORMANCE REPORT\n========================================\n\n🌐 MULTI-PLATFORM OVERVIEW\n------------------------\nPlatforms analyzed: 5 active accounts 📊\nTracking period: Last 90 days 📅\nTotal reach: 2.4M impressions 👀\nOverall engagement: +23% increase 📈\n\n📊 PLATFORM BREAKDOWN\n------------------\n📸 INSTAGRAM\n• Followers: 28,400 (+12% growth) 📈\n• Engagement rate: 4.7% (above 3.8% industry avg) ⭐\n• Best posting time: 6-8 PM weekdays ⏰\n• Top content: Behind-the-scenes videos 🎬\n\n💼 LINKEDIN\n• Connections: 15,600 (+8% growth) 🤝\n• Post reach: 45,000 average 📢\n• Click-through rate: 2.3% 🖱️\n• Best content: Industry insights 💡\n\n🐦 TWITTER/X\n• Followers: 12,200 (+5% growth) 📊\n• Impressions: 180,000 monthly 👁️\n• Retweet rate: 1.8% 🔄\n• Peak activity: 12-2 PM & 7-9 PM ⌚\n\n👥 FACEBOOK\n• Page likes: 8,900 (+3% growth) 👍\n• Reach: 67,000 monthly 📡\n• Engagement: 3.2% 💬\n• Best format: Native videos 🎥\n\n🎵 TIKTOK\n• Followers: 5,200 (+45% growth!) 🚀\n• Average views: 12,000 per video 📹\n• Engagement: 8.9% (exceptional) 🔥\n• Viral content: 3 videos >100K views ⚡\n\n💡 CONTENT INSIGHTS\n----------------\n• Top performer: How-to videos (67% higher engagement) 🎯\n• Optimal hashtags: 5-7 per post #️⃣\n• Video vs. images: 3x more engagement 📸➡️🎬\n• User-generated content: 85% more authentic reach 👥\n• Best posting frequency: 1x daily (varies by platform) 📅\n\n🎯 GROWTH STRATEGY RECOMMENDATIONS\n-------------------------------\n1. 📹 Double down on video content production\n   → Increase by 40% across all platforms\n   → Focus on educational/tutorial format 📚\n\n2. ⏰ Optimize posting schedules\n   → Use platform-specific peak times\n   → Maintain consistent daily presence 📆\n\n3. 💬 Enhance community engagement\n   → Respond to comments within 2 hours ⚡\n   → Create polls and interactive content 📊\n\n4. 🔄 Cross-platform content adaptation\n   → Repurpose top content for each platform\n   → Maintain platform-native formatting 🎨\n\n5. 📈 Trend monitoring & participation\n   → Weekly trend analysis 🔍\n   → Quick response to viral opportunities 🚀",
     "metadata": {
       "processing_time": "5 minutes",
       "platforms_analyzed": "5",
       "engagement_increase": "+23%"
+    }
+  },
+  {
+    "title": "E-commerce Sales Optimization",
+    "url": "https://example-store.com",
+    "description": "Complete analysis of online store performance with conversion optimization recommendations.",
+    "timestamp": "2024-12-15T14:30:00Z",
+    "category": "E-commerce",
+    "tags": ["sales", "conversion", "optimization", "analytics"],
+    "content": "🛒 E-COMMERCE SALES ANALYSIS\n========================================\n\n📊 STORE PERFORMANCE OVERVIEW\n---------------------------\nAnalysis period: Last 90 days 📅\nTotal orders processed: 2,847 🛍️\nRevenue analyzed: $362,500 💰\nConversion rate: 3.2% (+0.8% improvement) 📈\n\n🎯 KEY METRICS\n--------------\n• Average order value: $127.50 💵\n• Cart abandonment: 23% (industry avg: 28%) ✅\n• Mobile traffic: 68% of total visits 📱\n• Desktop conversion: 4.1% vs Mobile: 2.8% 💻📱\n• Return customer rate: 34% 🔄\n• Customer lifetime value: $340 💎\n\n📱 TRAFFIC BREAKDOWN\n-------------------\n🌐 Traffic Sources:\n• Organic search: 42% 🔍\n• Direct traffic: 28% 🎯\n• Social media: 18% 📱\n• Email campaigns: 8% 📧\n• Paid ads: 4% 💰\n\n⭐ Top Performing Categories:\n• Electronics: 32% of revenue 📺\n• Fashion: 24% of revenue 👕\n• Home & Garden: 19% of revenue 🏡\n• Sports: 15% of revenue ⚽\n• Books: 10% of revenue 📚\n\n🎯 OPTIMIZATION RECOMMENDATIONS\n-----------------------------\n1. 📱 Mobile Experience Enhancement\n   → Simplify checkout process (reduce from 6 to 3 steps)\n   → Add guest checkout option 🚀\n   → Optimize page load speed (target <2s) ⚡\n\n2. 🕐 Peak Hours Strategy\n   → Launch evening campaigns (6-10 PM) 🌙\n   → Target mobile users during peak times 📱\n   → Implement time-sensitive offers ⏰\n\n3. 📦 Inventory Management\n   → Increase electronics stock by 25% 📈\n   → Add premium product lines 💎\n   → Create bundle offers 🎁\n\n4. 🚨 Urgency Indicators\n   → \"Only X left in stock\" messages 📊\n   → Limited-time discount counters ⏳\n   → Flash sale notifications 🔥\n\n💡 QUICK WINS IDENTIFIED\n------------------------\n✅ Add trust badges on checkout page\n✅ Implement exit-intent popups with discounts\n✅ Create abandoned cart email sequences\n✅ Add product recommendations on cart page\n✅ Enable one-click social login options",
+    "metadata": {
+      "processing_time": "4 minutes",
+      "orders_analyzed": "2,847",
+      "revenue_tracked": "$362,500"
+    }
+  },
+  {
+    "title": "Email Marketing Campaign Analysis",
+    "url": "https://email-campaign-example.com",
+    "description": "Comprehensive email marketing performance review with deliverability and engagement insights.",
+    "timestamp": "2024-12-10T10:15:00Z",
+    "category": "Email Marketing",
+    "tags": ["email", "marketing", "engagement", "automation"],
+    "content": "📧 EMAIL MARKETING PERFORMANCE\n========================================\n\n📊 CAMPAIGN OVERVIEW\n--------------------\nCampaigns analyzed: 24 campaigns 📨\nEmails sent: 145,600 total 📬\nAnalysis period: Last 3 months 📅\nSubscriber list: 18,200 active 👥\n\n📈 KEY PERFORMANCE METRICS\n-------------------------\n📬 Deliverability Metrics:\n• Delivery rate: 97.8% ✅\n• Bounce rate: 2.2% (excellent) 🎯\n• Spam complaints: 0.1% (very low) 🛡️\n• Unsubscribe rate: 0.8% (below 1% target) 📉\n\n👀 Engagement Metrics:\n• Open rate: 24.3% (vs 21.3% industry avg) 📈\n• Click rate: 3.7% (vs 2.6% industry avg) 🖱️\n• Click-to-open rate: 15.2% 🎯\n• Conversion rate: 2.1% 💰\n\n🏆 TOP PERFORMING CAMPAIGNS\n--------------------------\n1. 🎄 Holiday Sale Campaign\n   • Open rate: 31.2% 📊\n   • Click rate: 5.8% 🖱️\n   • Revenue: $28,400 💰\n   • Subject: \"48-Hour Flash Sale - 40% Off Everything\"\n\n2. 💡 Weekly Newsletter #47\n   • Open rate: 28.6% 📊\n   • Click rate: 4.9% 🖱️\n   • Engagement: 6:32 avg time 📖\n   • Subject: \"5 Ways to Boost Your Productivity This Week\"\n\n3. 🎁 Product Launch Announcement\n   • Open rate: 26.4% 📊\n   • Click rate: 4.2% 🖱️\n   • Pre-orders: 340 units 📦\n   • Subject: \"Introducing Our Game-Changing New Product\"\n\n📅 SEND TIME OPTIMIZATION\n------------------------\n🕐 Best Send Times Identified:\n• Tuesday 10 AM: 26.8% open rate ⏰\n• Thursday 2 PM: 25.1% open rate ⏰\n• Saturday 9 AM: 23.9% open rate ⏰\n\n📱 Device Performance:\n• Mobile opens: 62% 📱\n• Desktop opens: 31% 💻\n• Tablet opens: 7% 📱\n\n🎯 OPTIMIZATION RECOMMENDATIONS\n-----------------------------\n1. 📝 Subject Line Enhancement\n   → A/B test emojis in subject lines 😊\n   → Keep under 50 characters for mobile 📱\n   → Use urgency words (limited, exclusive, today) ⚡\n\n2. 📱 Mobile-First Design\n   → Optimize for mobile viewing (62% opens) 📲\n   → Use larger buttons and fonts 👆\n   → Single-column layout preferred 📄\n\n3. 🎯 Segmentation Strategy\n   → Create behavior-based segments 📊\n   → Personalize content by purchase history 🛍️\n   → Geographic targeting for time zones 🌍\n\n4. 🤖 Automation Workflows\n   → Welcome series for new subscribers 👋\n   → Win-back campaigns for inactive users 🔄\n   → Post-purchase follow-up sequences 📦",
+    "metadata": {
+      "processing_time": "3 minutes",
+      "campaigns_analyzed": "24",
+      "emails_sent": "145,600"
     }
   }
 ]
