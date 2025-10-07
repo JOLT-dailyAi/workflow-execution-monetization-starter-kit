@@ -1,3 +1,29 @@
+/*
+=============================================================================
+CUSTOMIZATION CHECKLIST - debug-test.js
+=============================================================================
+REQUIRED CHANGES:
+☐ Line 264: Replace webhook test URL with your actual test endpoint
+   → Update: 'https://jolt-dailyai.jack-of-all-traits-official.workers.dev/api/webhook-test/...'
+   → With: 'https://your-worker.your-subdomain.workers.dev/api/webhook-test/your-endpoint'
+
+OPTIONAL CHANGES:
+☐ Update console log messages to match your service name
+☐ Modify test payload structure to match your workflow inputs
+☐ Add/remove fields in monitorFormSubmissions() based on your form
+
+USAGE:
+☐ Include this file only during development/testing
+☐ Remove from production to reduce console noise
+☐ Available debug functions: testWebhook(), testRepoValidation()
+
+NO CHANGES NEEDED:
+✓ All monitoring, logging, and error tracking work as-is
+✓ HTTP request interception works with any endpoints
+✓ Form validation monitoring works with any form fields
+=============================================================================
+*/
+
 // Enhanced debug script with HTTP response logging
 console.log('=== Free Trial Enhanced Debug Test with HTTP Logging ===');
 
@@ -205,7 +231,8 @@ const monitorWebhookCalls = () => {
 window.testWebhook = async function(testPayload = null) {
     console.log('🧪 TESTING WEBHOOK ENDPOINT');
     
-    const testUrl = 'https://jolt-dailyai.jack-of-all-traits-official.workers.dev/api/webhook-test/c4cb286d-e375-4cd8-96be-9866403fa54d';
+    // TODO: Replace with your actual test webhook URL
+    const testUrl = 'https://your-worker.your-subdomain.workers.dev/api/webhook-test/your-endpoint';
     
     const defaultPayload = {
         license_key: 'TEST-KEY-123',
@@ -285,9 +312,9 @@ window.fetch = async function(...args) {
     const startTime = Date.now();
     const [url, options] = args;
     
-    // Check if this is our webhook call
+    // TODO: Update this check to match your worker domain
     const isWebhookCall = typeof url === 'string' && 
-                         url.includes('jack-of-all-traits-official.workers.dev');
+                         url.includes('your-worker.your-subdomain.workers.dev');
     
     if (isWebhookCall) {
         console.log('🎯 WEBHOOK CALL DETECTED');
@@ -582,7 +609,7 @@ setTimeout(() => {
     
     console.log('\n📋 All monitoring systems active. Now try:');
     console.log('1. Fill out the form normally');
-    console.log('2. Click "Analyze Repository"'); 
+    console.log('2. Click "Process Request"'); 
     console.log('3. Watch this console for detailed request/response logging');
     
 }, 2000);
