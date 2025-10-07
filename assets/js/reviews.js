@@ -1,9 +1,37 @@
+/*
+=============================================================================
+CUSTOMIZATION CHECKLIST - reviews.js
+=============================================================================
+REQUIRED CHANGES:
+☐ Line 9: Replace SHEET_ID with your Google Sheets ID (after /d/ in your sheet URL)
+☐ Line 11: Replace GOOGLE_FORM_URL with your actual Google Form URL
+
+OPTIONAL CHANGES:
+☐ Line 12: Adjust REFRESH_INTERVAL (currently 60 seconds)
+☐ Line 17: Adjust REVIEWS_PER_PAGE for different layouts
+☐ Customize getUserBadge() badges if you have different user types
+☐ Modify review HTML structure in createReviewHTML() if needed
+
+GOOGLE SHEETS SETUP:
+☐ Create Google Sheet with columns: Timestamp, Name, User Type, Rating, Review, Use Case, Email, Suggestions
+☐ Make sheet publicly viewable (Share > Anyone with link can view)
+☐ Copy sheet ID from URL: docs.google.com/spreadsheets/d/[SHEET_ID]/edit
+
+NO CHANGES NEEDED:
+✓ CSV parsing, pagination, and error handling work as-is
+✓ Auto-refresh every 60 seconds included
+✓ Responsive reviews per page adjustment
+=============================================================================
+*/
+
 // reviews.js - Dynamic Google Sheets Review System
 // Place this in assets/js/reviews.js
 
-const SHEET_ID = '1N3n5jgGqP0Geu-JgcSyThQcMCZUDy9eRQ9BqvGTolDQ';
+// TODO: Replace with your Google Sheets ID (found in sheet URL after /d/)
+const SHEET_ID = 'YOUR_GOOGLE_SHEETS_ID_HERE';
 const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv`;
-const GOOGLE_FORM_URL = 'https://forms.gle/cF5izZhej5GZ8M1k7';
+// TODO: Replace with your Google Form URL for collecting reviews
+const GOOGLE_FORM_URL = 'YOUR_GOOGLE_FORM_URL_HERE';
 const REFRESH_INTERVAL = 60000; // Refresh every 60 seconds
 
 let allReviews = [];
@@ -215,6 +243,19 @@ function setupPagination() {
                 updatePagination();
             }
         });
+    }
+    
+    // Initial call to setup leave review button
+    setupLeaveReviewButton();
+}
+
+// Setup leave review button
+function setupLeaveReviewButton() {
+    const leaveReviewBtn = document.querySelector('.leave-review-btn');
+    if (leaveReviewBtn) {
+        leaveReviewBtn.href = GOOGLE_FORM_URL;
+        leaveReviewBtn.target = '_blank';
+        leaveReviewBtn.rel = 'noopener noreferrer';
     }
 }
 
