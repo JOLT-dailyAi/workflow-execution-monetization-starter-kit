@@ -34,6 +34,7 @@ If relevant, please share your configuration (remove sensitive information):
 Remove actual URLs/keys, just show the structure
 
 WEBHOOK_URL=https://your-worker.domain.workers.dev/webhook
+
 LICENSE_VALIDATION_URL=https://your-worker.domain.workers.dev/validate
 
 
