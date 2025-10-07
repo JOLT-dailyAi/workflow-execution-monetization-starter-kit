@@ -11,6 +11,7 @@ title: '[BUG] '
 labels: ['bug']
 
 assignees: ''
+
 ---
 
 ## Bug Description
