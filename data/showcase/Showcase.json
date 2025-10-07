@@ -1,3 +1,39 @@
+/*
+=============================================================================
+CUSTOMIZATION CHECKLIST - Showcase.json
+=============================================================================
+REQUIRED CHANGES:
+☐ Replace ALL example entries with your actual workflow results
+☐ Update "title" fields with real project names or client work
+☐ Update "url" fields with real websites (get permission first) or use example.com
+☐ Update "description" fields to describe what your workflow accomplished
+☐ Update "content" field with your actual workflow output format
+☐ Update "category" fields to match your workflow type
+☐ Update "tags" arrays with relevant keywords
+
+CONTENT FORMAT:
+☐ Keep the ASCII formatting style (====, ----, •) for textarea display
+☐ Use emojis strategically for visual appeal
+☐ Structure content to showcase your workflow's value
+☐ Include metrics, results, and recommendations in your format
+
+METADATA:
+☐ Update "processing_time" to reflect your workflow's actual timing
+☐ Update custom metadata fields to match your workflow metrics
+☐ Use real timestamps or keep example dates
+
+GROWTH:
+☐ Add new entries as you complete successful client work
+☐ Keep 3-10 examples (too many makes showcase slow)
+☐ Remove oldest/least impressive examples periodically
+
+PRIVACY:
+☐ Get client permission before using real URLs/names
+☐ Anonymize sensitive data in content
+☐ Use placeholder domains if needed (example-client.com)
+=============================================================================
+*/
+
 [
   {
     "title": "Social Media Analytics Report",
