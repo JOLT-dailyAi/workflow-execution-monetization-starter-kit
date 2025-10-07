@@ -6,7 +6,7 @@
 
 ## The Problem Every Workflow Creator Faces
 
-You've spent weeks perfecting your n8n workflow. It's brilliant—automatically processes data, integrates APIs, generates reports, or handles complex business logic. People would pay good money for this kind of automation.
+You've spent weeks perfecting your n8n workflow. It's brilliant - automatically processes data, integrates APIs, generates reports, or handles complex business logic. People would pay good money for this kind of automation.
 
 But how do you actually monetize it?
 
