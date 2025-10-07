@@ -3,344 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- TODO: Update title with your service name -->
-    <title>Your Workflow Service Name</title>
-    <!-- TODO: Update description -->
-    <meta name="description" content="Describe what your workflow does and the value it provides">
-    
-    <!-- TODO: Replace with your favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <!-- TODO: Replace with your service name and description -->
+    <title>Your Service Name - Workflow Processing for Business Automation</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/free-trial.css">
+    <link rel="stylesheet" href="assets/css/floating-widgets.css">
+    <!-- NEW: Add review system CSS -->
+    <link rel="stylesheet" href="assets/css/reviews.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <!-- TODO: Replace with your service name -->
-                <h1>Your Workflow Service</h1>
-                <p class="tagline">Your compelling tagline here</p>
-            </div>
-            <nav>
-                <a href="#how-it-works">How It Works</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#showcase">Showcase</a>
-                <!-- TODO: Replace with your Discord/support URL -->
-                <a href="YOUR_DISCORD_URL" target="_blank" class="discord-link">
-                    <span class="discord-icon">💬</span>
-                    Join Discord
-                </a>
-            </nav>
-        </div>
+    <!-- Header Section -->
+    <header class="header">
+        <!-- TODO: Replace with your service name and value proposition -->
+        <h1>Your Service Name</h1>
+        <p class="subtitle">Your Workflow Processing Service Description</p>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <!-- TODO: Customize your hero headline and subtitle -->
-            <h2>Your Main Value Proposition Headline</h2>
-            <p class="subtitle">Explain what your workflow does and why it's valuable</p>
-        </div>
-    </section>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Left Sidebar - Pricing & Options -->
+        <aside class="sidebar-left">
+            <div class="pricing-card highlight">
+                <h3>Get Credits</h3>
+                <!-- TODO: Update pricing offer -->
+                <p class="price">LAUNCH SPECIAL: 15% OFF</p>
+                <p class="description">10 or 20 credit options</p>
+                <!-- TODO: Replace with your Gumroad product URL -->
+                <a href="YOUR_GUMROAD_PRODUCT_URL" class="btn-primary" target="_blank">Get on Gumroad</a>
+            </div>
+            
+            <div class="pricing-card disabled">
+                <h3>Alternative Platform</h3>
+                <p class="price">Soon</p>
+                <p class="description">More payment options</p>
+                <button class="btn-disabled" disabled>Coming Soon</button>
+            </div>
+        </aside>
 
-    <div id="status-container"></div>
-
-    <section class="main-form">
-        <div class="container">
-            <div class="form-card">
-                <h3>Submit Your Request</h3>
+        <!-- Main Form Section -->
+        <main class="main-form">
+            <div class="form-container">
+                <div class="form-header" style="position: relative;">
+                    <!-- TODO: Update form title -->
+                    <h2>Process Request</h2>
+                    <button class="btn-secondary" id="freeTrial" style="position: absolute; top: 0; right: 0;">Try once for free</button>
+                </div>
                 <form id="analysisForm">
                     <div class="form-group">
-                        <label for="licenseKey">
-                            License Key
-                            <span class="tooltip" title="Enter your license key or try for free">ℹ️</span>
-                        </label>
-                        <div class="input-with-button">
-                            <input type="text" id="licenseKey" name="license_key" placeholder="Enter your license key or click Try Free" required>
-                            <button type="button" id="freeTrial" class="trial-button">Try once for free</button>
-                        </div>
-                        <div id="licenseValidation" class="validation-message"></div>
+                        <label for="licenseKey">License Key (holds your credits)</label>
+                        <input type="text" id="licenseKey" name="licenseKey" placeholder="Enter your license key" required>
+                        <div class="license-info" id="licenseInfo"></div>
                     </div>
-
-                    <!-- TODO: Customize this input field for YOUR workflow's needs -->
-                    <!-- Current example is for GitHub URL - modify for your use case -->
+                    
+                    <!-- TODO: Modify this input field for YOUR workflow needs -->
                     <div class="form-group">
-                        <label for="repoUrl">
-                            <!-- TODO: Change label to match your input type -->
-                            Primary Input (URL/Text/File/etc.)
-                            <span class="tooltip" title="Describe what input you need">ℹ️</span>
-                        </label>
-                        <input type="text" id="repoUrl" name="repo_url" placeholder="Enter your input here" required>
-                        <div id="repoValidation" class="validation-message"></div>
+                        <label for="repoUrl">Primary Input (URL/Text/Data/etc.)</label>
+                        <input type="text" id="repoUrl" name="repoUrl" placeholder="Enter your input here" required>
+                        <div class="url-validation" id="urlValidation"></div>
                     </div>
 
                     <div class="form-group">
-                        <label for="userEmail">
-                            Email Address
-                            <span class="tooltip" title="Results will be sent to this email">ℹ️</span>
-                        </label>
-                        <input type="email" id="userEmail" name="user_email" placeholder="your@email.com" required>
+                        <!-- TODO: Replace Discord with your notification method -->
+                        <label for="discordId">Discord User ID (Optional)</label>
+                        <input type="text" id="discordId" name="discordId" placeholder="123456789012345678">
+                        <!-- TODO: Update Discord server link -->
+                        <small class="form-help">Enter your Discord User ID (numbers only). You must be in our <a href="YOUR_DISCORD_SERVER_URL" target="_blank">Support Server</a> to receive notifications.</small>
                     </div>
-
-                    <div class="form-group">
-                        <label for="discordId">
-                            Discord Username (Optional)
-                            <span class="tooltip" title="Get notified on Discord">ℹ️</span>
-                        </label>
-                        <input type="text" id="discordId" name="discord_id" placeholder="@yourusername">
+                    
+                    <div id="submitContainer">
+                        <!-- TODO: Update button text for your workflow -->
+                        <button type="submit" class="btn-primary btn-large" id="submitBtn" disabled>
+                            Process Request
+                        </button>
                     </div>
-
-                    <!-- TODO: Customize button text -->
-                    <button type="submit" id="submitBtn" class="submit-button" disabled>Process Request</button>
+                    
+                    <!-- TODO: Update processing note for your workflow -->
+                    <p class="processing-note">Processing time varies by request complexity.</p>
                 </form>
-                <div id="responseContainer" style="display: none;"></div>
+                
+                <div class="status-message" id="statusMessage"></div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar - Reviews -->
+        <!-- Replace the existing sidebar-right section with this code -->
+        <aside class="sidebar-right">
+            <div class="review-section">
+                <h3>⭐ Customer Reviews</h3>
+                
+                <!-- Leave Review Button -->
+                <!-- TODO: Replace with your review form URL -->
+                <a href="YOUR_REVIEW_FORM_URL" 
+                   class="leave-review-btn" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    Leave a Review
+                </a>
+                
+                <!-- Reviews Container - Populated by JavaScript -->
+                <div class="reviews" id="reviewsContainer">
+                    <div class="reviews-loading">Loading reviews</div>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="review-pagination">
+                    <button id="prevReviewBtn" disabled aria-label="Previous page">← Prev</button>
+                    <span class="review-page-info" id="reviewPageInfo">1/1</span>
+                    <button id="nextReviewBtn" disabled aria-label="Next page">Next →</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <!-- FIXED: Added missing closing div for .container -->
+
+    <!-- Showcase Section -->
+    <section class="showcase">
+        <!-- TODO: Update showcase title -->
+        <h2>Showcase</h2>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <!-- TODO: Update search placeholder -->
+                <input type="text" id="showcaseSearch" placeholder="🔍 Search examples..." autocomplete="off">
+                <div class="autocomplete-dropdown" id="autocompleteDropdown"></div>
             </div>
         </div>
-    </section>
-
-    <section id="showcase" class="showcase-section">
-        <div class="container">
-            <!-- TODO: Customize showcase title for your workflow type -->
-            <h2>Recent Results Showcase</h2>
-            <p class="showcase-subtitle">See examples of successful executions</p>
+        
+        <!-- Top Navigation Controls -->
+        <div class="showcase-navigation" id="topNavigation">
+            <button class="nav-btn" id="prevBtn" disabled>
+                <span class="nav-arrow">←</span>
+                <span class="nav-text">Previous</span>
+            </button>
             
-            <div class="showcase-controls">
-                <div class="search-container">
-                    <input type="text" id="showcaseSearch" placeholder="Search repositories..." class="search-input">
-                    <div id="searchSuggestions" class="search-suggestions"></div>
-                </div>
-                <div class="showcase-stats">
-                    <span id="showcaseCount">Loading...</span>
-                </div>
+            <div class="showcase-counter">
+                <span id="currentIndex">1</span> / <span id="totalItems">0</span>
             </div>
-
-            <div id="showcaseContainer" class="showcase-grid">
-                <div class="showcase-loading">
-                    <div class="loading-spinner"></div>
-                    <p>Loading showcase...</p>
-                </div>
-            </div>
-
-            <div class="showcase-pagination">
-                <button id="prevShowcase" class="pagination-btn" disabled>‹ Previous</button>
-                <span id="showcasePageInfo">Page 1</span>
-                <button id="nextShowcase" class="pagination-btn">Next ›</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="how-it-works" class="info-section">
-        <div class="container">
-            <h2>How It Works</h2>
-            <!-- TODO: Customize these steps for your workflow -->
-            <div class="steps-grid">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Submit Your Request</h3>
-                    <p>Enter your input and license key (or try free)</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Automated Processing</h3>
-                    <p>Our workflow processes your request automatically</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Receive Results</h3>
-                    <p>Get detailed results delivered to your email</p>
-                </div>
-            </div>
-            <!-- TODO: Update processing time -->
-            <div class="processing-time">
-                <p><strong>Processing time:</strong> Typically 2-10 minutes</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing" class="pricing-section">
-        <div class="container">
-            <h2>Simple Credit-Based Pricing</h2>
-            <p class="pricing-subtitle">Pay per execution. No subscriptions. Credits never expire.</p>
             
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Free Trial</h3>
-                    <div class="price">
-                        <span class="currency">$</span>
-                        <span class="amount">0</span>
-                    </div>
-                    <ul class="features">
-                        <li>✓ 1 free execution/month</li>
-                        <li>✓ No payment required</li>
-                        <li>✓ Full feature access</li>
-                        <li>✓ Email delivery</li>
-                    </ul>
-                    <button class="trial-btn" onclick="document.getElementById('freeTrial').click()">
-                        Start Free Trial
-                    </button>
+            <button class="nav-btn" id="nextBtn" disabled>
+                <span class="nav-text">Next</span>
+                <span class="nav-arrow">→</span>
+            </button>
+        </div>
+        
+        <div class="showcase-container">
+            <div class="showcase-item active" id="showcase-item-0">
+                <div class="showcase-header">
+                    <h3>Loading...</h3>
+                    <button class="copy-btn" onclick="copyToClipboard('showcase1')">📋</button>
                 </div>
-
-                <div class="pricing-card featured">
-                    <div class="badge">Most Popular</div>
-                    <h3>10 Credits</h3>
-                    <div class="price">
-                        <!-- TODO: Update pricing -->
-                        <span class="currency">$</span>
-                        <span class="amount">25</span>
-                    </div>
-                    <ul class="features">
-                        <!-- TODO: Update credits and per-execution cost -->
-                        <li>✓ 10 executions</li>
-                        <li>✓ $2.50/execution</li>
-                        <li>✓ Never expires</li>
-                        <li>✓ Email support</li>
-                    </ul>
-                    <!-- TODO: Replace with your Gumroad URL -->
-                    <a href="YOUR_GUMROAD_10_CREDITS_URL" target="_blank" class="buy-btn">
-                        Buy 10 Credits
-                    </a>
-                </div>
-
-                <div class="pricing-card">
-                    <h3>20 Credits</h3>
-                    <div class="price">
-                        <!-- TODO: Update pricing -->
-                        <span class="currency">$</span>
-                        <span class="amount">45</span>
-                    </div>
-                    <ul class="features">
-                        <!-- TODO: Update credits and per-execution cost -->
-                        <li>✓ 20 executions</li>
-                        <li>✓ $2.25/execution</li>
-                        <li>✓ Never expires</li>
-                        <li>✓ Priority support</li>
-                    </ul>
-                    <!-- TODO: Replace with your Gumroad URL -->
-                    <a href="YOUR_GUMROAD_20_CREDITS_URL" target="_blank" class="buy-btn">
-                        Buy 20 Credits
-                    </a>
-                </div>
+                <textarea id="showcase1" readonly>Loading showcase content...</textarea>
             </div>
-
-            <div class="custom-pricing">
-                <!-- TODO: Update contact email -->
-                <p>Need more credits? <a href="mailto:your-email@example.com">Contact us</a> for volume pricing.</p>
+            
+            <div class="showcase-item" id="showcase-item-1">
+                <div class="showcase-header">
+                    <h3>Loading...</h3>
+                    <button class="copy-btn" onclick="copyToClipboard('showcase2')">📋</button>
+                </div>
+                <textarea id="showcase2" readonly>Loading showcase content...</textarea>
             </div>
+            
+            <div class="showcase-item" id="showcase-item-2">
+                <div class="showcase-header">
+                    <h3>Loading...</h3>
+                    <button class="copy-btn" onclick="copyToClipboard('showcase3')">📋</button>
+                </div>
+                <textarea id="showcase3" readonly>Loading showcase content...</textarea>
+            </div>
+        </div>
+        
+        <!-- Bottom Navigation Controls -->
+        <div class="showcase-navigation" id="bottomNavigation">
+            <button class="nav-btn" id="prevBtnBottom" disabled>
+                <span class="nav-arrow">←</span>
+                <span class="nav-text">Previous</span>
+            </button>
+            
+            <div class="showcase-counter">
+                <span id="currentIndexBottom">1</span> / <span id="totalItemsBottom">0</span>
+            </div>
+            
+            <button class="nav-btn" id="nextBtnBottom" disabled>
+                <span class="nav-text">Next</span>
+                <span class="nav-arrow">→</span>
+            </button>
         </div>
     </section>
 
-    <section class="faq-section">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <!-- TODO: Customize FAQs for your workflow -->
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>How long does processing take?</h3>
-                    <p>Most requests complete within 2-10 minutes. You'll receive an email notification when done.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What format are results delivered in?</h3>
-                    <p>Results are sent via email with detailed output in your preferred format.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Do credits expire?</h3>
-                    <p>No, credits never expire. Use them whenever you need.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Is my data secure?</h3>
-                    <p>Yes, all data is processed securely and deleted after delivery. We never store or share your information.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Can I get a refund?</h3>
-                    <p>Yes, contact support within 7 days if you're not satisfied.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What if processing fails?</h3>
-                    <p>If processing fails due to our system, your credit is automatically refunded.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <!-- TODO: Update with your service name -->
-                    <h4>Your Workflow Service</h4>
-                    <p>Professional workflow automation</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#how-it-works">How It Works</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#showcase">Showcase</a></li>
-                        <!-- TODO: Update Discord URL -->
-                        <li><a href="YOUR_DISCORD_URL" target="_blank">Discord</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <!-- TODO: Create these pages or remove -->
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <!-- TODO: Update year and service name -->
-                <p>&copy; 2025 Your Service Name. Built with 
-                    <a href="https://github.com/JOLT-dailyAi/workflow-execution-monetization-starter-kit" target="_blank">
-                        Workflow Execution Monetization Kit
-                    </a>
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <div id="freeTrialModal" class="modal">
+    <!-- Free Trial Modal - Hidden by default -->
+    <div id="freeTrialModal" class="modal" style="display: none;">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Get Your Free Trial Key</h2>
-            <p>One free execution per month. No payment required.</p>
+            <h2>Free Trial</h2>
+            <!-- TODO: Update trial description -->
+            <p>Get one free processing to test our service.</p>
             <form id="freeTrialForm">
                 <div class="form-group">
                     <label for="trialEmail">Email Address</label>
-                    <input type="email" id="trialEmail" placeholder="your@email.com" required>
-                    <div id="emailValidationMsg" class="validation-message"></div>
+                    <input type="email" id="trialEmail" required placeholder="your@email.com">
+                    <div id="emailValidationMsg" class="email-validation"></div>
                 </div>
-                <!-- TODO: Modify this field to match your workflow input -->
                 <div class="form-group">
-                    <label for="trialRepoUrl">Trial Input</label>
-                    <input type="text" id="trialRepoUrl" placeholder="Enter input for trial" required>
-                    <div id="repoValidationMsg" class="validation-message"></div>
+                    <!-- TODO: Update trial input field for your workflow -->
+                    <label for="trialRepoUrl">Input Data</label>
+                    <input type="text" id="trialRepoUrl" required placeholder="Enter your input">
+                    <div id="repoValidationMsg" class="repo-validation"></div>
+                </div>                
+                <div id="freeTrialButtonContainer">
+                    <button type="submit" class="btn-primary">Start Free Trial</button>
                 </div>
-                <button type="submit" class="primary-btn">Generate Trial Key</button>
             </form>
         </div>
     </div>
 
-    <div id="notification" class="notification">
-        <div class="notification-content">
-            <span class="notification-icon"></span>
-            <span class="notification-message"></span>
-            <button class="notification-close">&times;</button>
-        </div>
-    </div>
-
-    <div id="maintenanceModal" class="modal maintenance-modal">
-        <div class="modal-content">
-            <div class="maintenance-icon">🔧</div>
-            <h2>Scheduled Maintenance</h2>
-            <p>Our service is currently undergoing scheduled maintenance.</p>
-            <p>We'll be back online in: <span id="maintenanceCountdown">--:--</span></p>
-            <p class="maintenance-note">All pending requests will be processed once maintenance is complete.</p>
-        </div>
-    </div>
-
+    <!-- Load JS files -->
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/improved-vpn-detection.js"></script>
     <script src="assets/js/free-trial.js"></script>
+    <script src="assets/js/debug-test.js"></script>
+    <script src="assets/js/discord-widget.js"></script>
+    <!-- NEW: Add review system JavaScript -->
     <script src="assets/js/reviews.js"></script>
-    <script src="assets/js/main.js"></script>
+
+    <!-- Ko-fi Widget 
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+      kofiWidgetOverlay.draw('dailyai', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Support me',
+        'floating-chat.donateButton.background-color': '#00b9fe',
+        'floating-chat.donateButton.text-color': '#fff'
+      });
+    </script>
+    -->
+
+    <!-- Discord Floating Button -->
+    <!-- TODO: Replace Discord link and consider removing if not using Discord -->
+    <a href="#" class="discord-floating-btn" id="discordFloatingBtn" title="Join our Discord Server">
+      <img src="assets/images/discord.gif" alt="Discord">
+    </a>
+    
+    <!-- TODO: Update GitHub repository link -->
+    <a href="YOUR_GITHUB_REPO_URL" 
+       class="github-floating-btn" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       title="View on GitHub">
+      <img src="assets/images/Github2.gif" alt="GitHub">
+    </a>
+
 </body>
 </html>
