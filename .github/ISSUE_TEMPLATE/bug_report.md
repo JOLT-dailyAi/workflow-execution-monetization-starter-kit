@@ -1,13 +1,13 @@
 **1. Bug Report Template**
 **File:** `.github/ISSUE_TEMPLATE/bug_report.md`
 
-***
+---
 name: 🐛 Bug Report
 about: Report a bug or issue with the template
 title: '[BUG] '
 labels: ['bug']
 assignees: ''
-***
+---
 
 ## Bug Description
 A clear and concise description of what the bug is.
