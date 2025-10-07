@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub to AI ingester - Public Repository Processing for Claude, GPT-4 & All AI Models</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/free-trial.css">
+    <link rel="stylesheet" href="assets/css/floating-widgets.css">
+    <!-- NEW: Add review system CSS -->
+    <link rel="stylesheet" href="assets/css/reviews.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>GitHub to AI ingester</h1>
+        <p class="subtitle">Public Repository Processing for Claude, GPT-4 & All AI Models</p>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Left Sidebar - Pricing & Options -->
+        <aside class="sidebar-left">
+            <div class="pricing-card highlight">
+                <h3>Get Credits</h3>
+                <p class="price">EARLY BIRD: 12% OFF</p>
+                <p class="description">10 or 20 credit options</p>
+                <a href="https://joltdailyai.gumroad.com/l/github-to-ai-ingester" class="btn-primary" target="_blank">Get on Gumroad</a>
+            </div>
+            
+            <div class="pricing-card disabled">
+                <h3>Alternative Platform</h3>
+                <p class="price">Soon</p>
+                <p class="description">More payment options</p>
+                <button class="btn-disabled" disabled>Coming Soon</button>
+            </div>
+        </aside>
+
+        <!-- Main Form Section -->
+        <main class="main-form">
+            <div class="form-container">
+                <div class="form-header" style="position: relative;">
+                    <h2>Process Repository</h2>
+                    <button class="btn-secondary" id="freeTrial" style="position: absolute; top: 0; right: 0;">Try once for free</button>
+                </div>
+                <form id="analysisForm">
+                    <div class="form-group">
+                        <label for="licenseKey">License Key (holds your credits)</label>
+                        <input type="text" id="licenseKey" name="licenseKey" placeholder="Enter your license key" required>
+                        <div class="license-info" id="licenseInfo"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="repoUrl">GitHub Repository URL</label>
+                        <input type="url" id="repoUrl" name="repoUrl" placeholder="https://github.com/username/repository" required>
+                        <div class="url-validation" id="urlValidation"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="discordId">Discord User ID (Optional)</label>
+                        <input type="text" id="discordId" name="discordId" placeholder="123456789012345678">
+                        <small class="form-help">Enter your Discord User ID (numbers only). You must be in our <a href="https://discord.gg/AEJvSEWcZk" target="_blank">Support Server</a> to receive notifications.</small>
+                    </div>
+                    
+                    <div id="submitContainer">
+                        <button type="submit" class="btn-primary btn-large" id="submitBtn" disabled>
+                            Process Repository
+                        </button>
+                    </div>
+                    
+                    <p class="processing-note">Processing time varies by repository size.</p>
+                </form>
+                
+                <div class="status-message" id="statusMessage"></div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar - Reviews -->
+        <!-- Replace the existing sidebar-right section with this code -->
+        <aside class="sidebar-right">
+            <div class="review-section">
+                <h3>⭐ Customer Reviews</h3>
+                
+                <!-- Leave Review Button -->
+                <a href="https://forms.gle/cF5izZhej5GZ8M1k7" 
+                   class="leave-review-btn" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    Leave a Review
+                </a>
+                
+                <!-- Reviews Container - Populated by JavaScript -->
+                <div class="reviews" id="reviewsContainer">
+                    <div class="reviews-loading">Loading reviews</div>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="review-pagination">
+                    <button id="prevReviewBtn" disabled aria-label="Previous page">← Prev</button>
+                    <span class="review-page-info" id="reviewPageInfo">1/1</span>
+                    <button id="nextReviewBtn" disabled aria-label="Next page">Next →</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <!-- FIXED: Added missing closing div for .container -->
+
+    <!-- Showcase Section -->
+    <section class="showcase">
+        <h2>Showcase</h2>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="showcaseSearch" placeholder="🔍 Search analyses..." autocomplete="off">
+                <div class="autocomplete-dropdown" id="autocompleteDropdown"></div>
+            </div>
+        </div>
+        
+        <!-- Top Navigation Controls -->
+        <div class="showcase-navigation" id="topNavigation">
+            <button class="nav-btn" id="prevBtn" disabled>
+                <span class="nav-arrow">←</span>
+                <span class="nav-text">Previous</span>
+            </button>
+            
+            <div class="showcase-counter">
+                <span id="currentIndex">1</span> / <span id="totalItems">0</span>
+            </div>
+            
+            <button class="nav-btn" id="nextBtn" disabled>
+                <span class="nav-text">Next</span>
+                <span class="nav-arrow">→</span>
+            </button>
+        </div>
+        
+        <div class="showcase-container">
+            <div class="showcase-item active" id="showcase-item-0">
+                <div class="showcase-header">
+                    <h3>Loading...</h3>
+                    <button class="copy-btn" onclick="copyToClipboard('showcase1')">📋</button>
+                </div>
+                <textarea id="showcase1" readonly>Loading showcase content...</textarea>
+            </div>
+            
+            <div class="showcase-item" id="showcase-item-1">
+                <div class="showcase-header">
+                    <h3>Loading...</h3>
+                    <button class="copy-btn" onclick="copyToClipboard('showcase2')">📋</button>
+                </div>
+                <textarea id="showcase2" readonly>Loading showcase content...</textarea>
+            </div>
+            
+            <div class="showcase-item" id="showcase-item-2">
+                <div class="showcase-header">
+                    <h3>Loading...</h3>
+                    <button class="copy-btn" onclick="copyToClipboard('showcase3')">📋</button>
+                </div>
+                <textarea id="showcase3" readonly>Loading showcase content...</textarea>
+            </div>
+        </div>
+        
+        <!-- Bottom Navigation Controls -->
+        <div class="showcase-navigation" id="bottomNavigation">
+            <button class="nav-btn" id="prevBtnBottom" disabled>
+                <span class="nav-arrow">←</span>
+                <span class="nav-text">Previous</span>
+            </button>
+            
+            <div class="showcase-counter">
+                <span id="currentIndexBottom">1</span> / <span id="totalItemsBottom">0</span>
+            </div>
+            
+            <button class="nav-btn" id="nextBtnBottom" disabled>
+                <span class="nav-text">Next</span>
+                <span class="nav-arrow">→</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Free Trial Modal - Hidden by default -->
+    <div id="freeTrialModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Free Trial</h2>
+            <p>Get one free repository processing to test our service.</p>
+            <form id="freeTrialForm">
+                <div class="form-group">
+                    <label for="trialEmail">Email Address</label>
+                    <input type="email" id="trialEmail" required placeholder="your@email.com">
+                    <div id="emailValidationMsg" class="email-validation"></div>
+                </div>
+                <div class="form-group">
+                    <label for="trialRepoUrl">Repository URL</label>
+                    <input type="url" id="trialRepoUrl" required placeholder="https://github.com/user/repo">
+                    <div id="repoValidationMsg" class="repo-validation"></div>
+                </div>                
+                <div id="freeTrialButtonContainer">
+                    <button type="submit" class="btn-primary">Start Free Trial</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Load JS files -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/improved-vpn-detection.js"></script>
+    <script src="assets/js/free-trial.js"></script>
+    <script src="assets/js/debug-test.js"></script>
+    <script src="assets/js/discord-widget.js"></script>
+    <!-- NEW: Add review system JavaScript -->
+    <script src="assets/js/reviews.js"></script>
+
+    <!-- Ko-fi Widget 
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+      kofiWidgetOverlay.draw('dailyai', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Support me',
+        'floating-chat.donateButton.background-color': '#00b9fe',
+        'floating-chat.donateButton.text-color': '#fff'
+      });
+    </script>
+    -->
+
+    <!-- Discord Floating Button -->
+    <a href="#" class="discord-floating-btn" id="discordFloatingBtn" title="Join our Discord Server">
+      <img src="assets/images/discord.gif" alt="Discord">
+    </a>
+    
+    <a href="https://github.com/JOLT-dailyAi/GitHub-to-AI-ingester" 
+       class="github-floating-btn" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       title="View on GitHub">
+      <img src="assets/images/Github2.gif" alt="GitHub">
+    </a>
+
+</body>
+</html>
