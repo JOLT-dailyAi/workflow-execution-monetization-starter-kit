@@ -2,25 +2,31 @@
 =============================================================================
 CUSTOMIZATION CHECKLIST - debug-test.js
 =============================================================================
-REQUIRED CHANGES:
-☐ Line 264: Replace webhook test URL with your actual test endpoint
-   → Update: 'https://jolt-dailyai.jack-of-all-traits-official.workers.dev/api/webhook-test/...'
-   → With: 'https://your-worker.your-subdomain.workers.dev/api/webhook-test/your-endpoint'
+REQUIRED CHANGES (Search for these exact strings):
+☐ Search: "https://your-worker.your-subdomain.workers.dev/api/webhook-test/your-endpoint" → Replace with your actual test webhook URL
+☐ Search: "your-worker.your-subdomain.workers.dev" → Replace with your Cloudflare Worker domain (appears in 2 places)
 
-OPTIONAL CHANGES:
-☐ Update console log messages to match your service name
-☐ Modify test payload structure to match your workflow inputs
-☐ Add/remove fields in monitorFormSubmissions() based on your form
+OPTIONAL SERVICE BRANDING (Search and customize):
+☐ Search: "Free Trial Enhanced Debug Test" → Update with your service name
+☐ Search: "Process Request" → Update button text monitoring to match your workflow
+☐ Search: "Repository URL" → Update field monitoring to match your input type
+☐ Search: "repository_url" → Update payload field names for your workflow
 
-USAGE:
+USAGE INSTRUCTIONS:
 ☐ Include this file only during development/testing
-☐ Remove from production to reduce console noise
+☐ Remove from production to reduce console noise  
 ☐ Available debug functions: testWebhook(), testRepoValidation()
+
+TESTING FUNCTIONS (Available in browser console):
+☐ testWebhook() - Test your webhook endpoint directly
+☐ testWebhook(customPayload) - Test with custom data
+☐ testRepoValidation("https://github.com/owner/repo") - Test input validation
 
 NO CHANGES NEEDED:
 ✓ All monitoring, logging, and error tracking work as-is
 ✓ HTTP request interception works with any endpoints
 ✓ Form validation monitoring works with any form fields
+✓ All debugging utilities work universally
 =============================================================================
 */
 
