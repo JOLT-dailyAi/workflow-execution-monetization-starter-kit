@@ -1,3 +1,34 @@
+/*
+=============================================================================
+CUSTOMIZATION CHECKLIST - free-trial.css
+=============================================================================
+BRANDING CUSTOMIZATION (Optional):
+☐ Lines 34-36: Update .leave-review-btn gradient colors to match your brand
+   → Current: purple gradient (#667eea → #764ba2)
+☐ Lines 82-103: Update notification colors if desired
+   → info (blue), success (green), warning (orange), error (red)
+
+RESPONSIVE TEXT (Mobile):
+☐ Lines 22-25: Customize mobile button text
+   → "Free Trial" → your preferred short text
+☐ Lines 30-33: Customize VPN blocked mobile text  
+   → "Disable VPN" → your preferred message
+☐ Lines 43-47: Customize extra small mobile text
+   → "Trial" → your ultra-short text
+
+LAYOUT CUSTOMIZATION (Optional):
+☐ Line 71: Adjust .reviews max-height (currently 400px)
+☐ Lines 158-162: Adjust notification max-width (300px)
+
+NO CHANGES NEEDED:
+✓ All button states (blocked, loading) work as-is
+✓ Notification system styling is generic
+✓ Cookie consent modal styling included
+✓ Mobile responsiveness and animations included
+✓ All form validation styling works universally
+=============================================================================
+*/
+
 /* Free Trial Button Styles */
 .btn-blocked {
     background-color: #da3633 !important;
