@@ -2,36 +2,42 @@
 =============================================================================
 CUSTOMIZATION CHECKLIST - improved-vpn-detection.js
 =============================================================================
-OPTIONAL CHANGES:
-☐ Line 32: Adjust CONFIDENCE_THRESHOLD (default: 40) - lower = more sensitive
-☐ Line 31: Adjust TIMEOUT (default: 5000ms) for detection speed vs accuracy
+OPTIONAL VPN SENSITIVITY (Search and modify if needed):
+☐ Search: "CONFIDENCE_THRESHOLD: 40" → Adjust sensitivity (lower = more sensitive)
+☐ Search: "TIMEOUT: 5000" → Adjust detection timeout (5000ms = 5 seconds)
 
-ADVANCED CUSTOMIZATION (Optional):
-☐ Modify testUrls in testRequestPatterns() if those services are blocked
-☐ Add/remove VPN IP patterns in hasVPNIPPattern() for your region
-☐ Adjust suspiciousResolutions in analyzeScreenResolution() 
+ADVANCED CUSTOMIZATION (Optional - Search and modify for your region/needs):
+☐ Search: "https://httpbin.org/ip" → Replace IP detection services if blocked
+☐ Search: "https://api.ipify.org" → Replace with alternative IP services
+☐ Search: "https://icanhazip.com" → Replace with working IP detection service
+☐ Search: "suspiciousResolutions" → Add/remove VPN/VM screen resolutions
+☐ Search: "vpnPatterns" → Add/remove VPN IP address patterns for your region
+
+REGIONAL LANGUAGE/TIMEZONE (Optional - Search and modify):
+☐ Search: "obviousMismatches" → Customize language/timezone mismatch detection
+☐ Search: "Asia/Tokyo" → Add your local timezone patterns
 
 NO CHANGES NEEDED:
 ✓ WebRTC detection, latency testing, browser fingerprinting work as-is
-✓ Cookie manager with browser-specific instructions included
+✓ Cookie manager with browser-specific instructions included  
 ✓ All anti-abuse measures work out of the box
 ✓ Automatically exported to window.ImprovedVPNDetection and window.ImprovedCookieManager
-
-USAGE:
 ✓ Already integrated with free-trial.js - no setup required
 ✓ Detection runs automatically when user clicks "Try once for free"
 =============================================================================
 */
 
-
 // More Sensitive VPN Detection - Better at catching modern VPNs
 class SensitiveVPNDetection {
     constructor() {
         this.config = {
+            // TODO: Adjust timeout if needed (5000ms = 5 seconds)
             TIMEOUT: 5000,
+            // TODO: Adjust sensitivity - lower number = more sensitive detection
             CONFIDENCE_THRESHOLD: 40 // Lower threshold for better detection
         };
     }
+
 
     async detectVPN() {
         console.log('🔍 Starting sensitive VPN detection...');
