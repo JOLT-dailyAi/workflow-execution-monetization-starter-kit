@@ -2,30 +2,30 @@
 =============================================================================
 CUSTOMIZATION CHECKLIST - free-trial.css
 =============================================================================
-BRANDING CUSTOMIZATION (Optional):
-☐ Lines 34-36: Update .leave-review-btn gradient colors to match your brand
-   → Current: purple gradient (#667eea → #764ba2)
-☐ Lines 82-103: Update notification colors if desired
-   → info (blue), success (green), warning (orange), error (red)
+MOBILE BUTTON TEXT (Optional - Search and customize for your service):
+☐ Search: 'content: "Free Trial"' → Update mobile button text to your preferred short text
+☐ Search: 'content: "Trial"' → Update ultra-mobile button text for small screens
+☐ Search: 'content: "Disable VPN"' → Update VPN blocked mobile message  
+☐ Search: 'content: "No VPN"' → Update VPN blocked ultra-mobile message
 
-RESPONSIVE TEXT (Mobile):
-☐ Lines 22-25: Customize mobile button text
-   → "Free Trial" → your preferred short text
-☐ Lines 30-33: Customize VPN blocked mobile text  
-   → "Disable VPN" → your preferred message
-☐ Lines 43-47: Customize extra small mobile text
-   → "Trial" → your ultra-short text
+NOTIFICATION COLORS (Optional - Search and modify these colors):
+☐ Search: "rgba(31, 111, 235, 0.15)" → Update info notification blue background
+☐ Search: "rgba(63, 185, 80, 0.15)" → Update success notification green background
+☐ Search: "rgba(255, 191, 0, 0.15)" → Update warning notification orange background
+☐ Search: "rgba(248, 81, 73, 0.15)" → Update error notification red background
 
 LAYOUT CUSTOMIZATION (Optional):
-☐ Line 71: Adjust .reviews max-height (currently 400px)
-☐ Lines 158-162: Adjust notification max-width (300px)
+☐ Search: "max-width: 300px" → Adjust notification popup width
+☐ Search: "top: 20px" → Adjust notification position from top
+☐ Search: "right: 20px" → Adjust notification position from right
 
 NO CHANGES NEEDED:
 ✓ All button states (blocked, loading) work as-is
-✓ Notification system styling is generic
+✓ Notification system styling is generic and professional
 ✓ Cookie consent modal styling included
 ✓ Mobile responsiveness and animations included
 ✓ All form validation styling works universally
+✓ Color scheme matches the dark theme perfectly
 =============================================================================
 */
 
