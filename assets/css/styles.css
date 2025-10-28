@@ -1,3 +1,33 @@
+/*
+=============================================================================
+CUSTOMIZATION CHECKLIST - styles.css
+=============================================================================
+BRANDING CUSTOMIZATION (Optional):
+☐ Lines 23-25: Update header background colors to match your brand
+☐ Lines 77-80: Update form container colors for your theme
+☐ Lines 269-277: Update pricing card highlight colors (green theme)
+☐ Lines 300-307: Update pricing .price color (currently green #238636)
+☐ Lines 458-466: Update .btn-primary colors to match your brand
+☐ Lines 475-481: Update .btn-secondary hover effects
+
+LAYOUT CUSTOMIZATION (Optional):
+☐ Line 32: Adjust grid layout (250px sidebars, 1fr center)
+☐ Line 37: Adjust max-width (currently 1400px)
+☐ Lines 671-674: Adjust desktop fixed heights (800px)
+☐ Lines 708-719: Adjust mobile breakpoints if needed
+
+SHOWCASE CUSTOMIZATION (Optional):
+☐ Lines 600-603: Customize showcase textarea scaling (0.85, 0.8, 0.75)
+☐ Lines 558-564: Adjust showcase container max-width (1200px)
+
+NO CHANGES NEEDED:
+✓ All component styling, responsive design, and animations work as-is
+✓ Dark theme colors work for any service
+✓ Modal, button, and form styling is generic
+✓ Mobile responsiveness included
+=============================================================================
+*/
+
 /* Reset and Base Styles */
 * {
     margin: 0;
