@@ -2,24 +2,28 @@
 =============================================================================
 CUSTOMIZATION CHECKLIST - floating-widgets.css
 =============================================================================
-LAYOUT CUSTOMIZATION (Optional):
-☐ Lines 11-12: Adjust Discord button position (bottom: 20px, left: 20px)
-☐ Lines 9-10: Adjust Discord button size (70px x 70px)
-☐ Lines 58-59: Adjust GitHub button position (bottom: 20px, right: 20px)
-☐ Lines 56-57: Adjust GitHub button size (70px x 70px)
-☐ Lines 34-41: Adjust mobile sizes (56px) if needed
+POSITIONING CUSTOMIZATION (Optional - Search and modify these values):
+☐ Search: "bottom: 20px" → Adjust Discord button vertical position
+☐ Search: "left: 20px" → Adjust Discord button horizontal position  
+☐ Search: "right: 20px" → Adjust GitHub button horizontal position
+☐ Search: "width: 70px" → Adjust desktop button size (appears multiple times)
+☐ Search: "width: 56px" → Adjust mobile button size (appears multiple times)
 
-VISUAL CUSTOMIZATION (Optional):
-☐ Lines 18-19: Adjust hover scaling effect (scale(1.1))
-☐ Lines 66-67: Same for GitHub button hover effect
-☐ Replace GIF images in assets/images/ folder with your own
+HOVER EFFECTS (Optional - Search and modify):
+☐ Search: "transform: scale(1.1)" → Adjust hover scaling effect for both buttons
+☐ Search: "transition: all 0.3s ease" → Adjust animation timing
+
+ASSETS CUSTOMIZATION:
+☐ Replace assets/images/discord.gif with your own Discord icon/GIF
+☐ Replace assets/images/Github2.gif with your own GitHub icon/GIF
 
 NO CHANGES NEEDED:
 ✓ Positioning and responsive design work for any service
 ✓ Sticker-style transparent background works universally  
-✓ Mobile responsiveness included
+✓ Mobile responsiveness (768px breakpoint) included
 ✓ All hover effects and transitions included
 ✓ Z-index and pointer events properly configured
+✓ Both buttons positioned on opposite corners automatically
 =============================================================================
 */
 
