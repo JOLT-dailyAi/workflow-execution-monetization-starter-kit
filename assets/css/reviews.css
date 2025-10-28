@@ -1,3 +1,31 @@
+/*
+=============================================================================
+CUSTOMIZATION CHECKLIST - reviews.css
+=============================================================================
+BRANDING CUSTOMIZATION (Optional):
+☐ Lines 34-36: Update .leave-review-btn gradient colors to match your brand
+   → Current: purple gradient (667eea → 764ba2)
+☐ Lines 130-142: Update user badge colors if you have different user types
+   → .badge-paid, .badge-trial, .badge-referral, .badge-organic
+
+LAYOUT CUSTOMIZATION (Optional):
+☐ Line 71: Adjust .reviews max-height (currently 400px)
+☐ Lines 239-241: Adjust responsive breakpoints if needed
+
+USER BADGE CUSTOMIZATION (If needed):
+☐ Update badge-paid gradient (lines 130-133) for your paid customers
+☐ Update badge-trial gradient (lines 135-138) for trial users  
+☐ Add new badge types in getUserBadge() function in reviews.js
+☐ Update corresponding CSS classes here
+
+NO CHANGES NEEDED:
+✓ Dark theme styling works for any service
+✓ Review layout, animations, and responsive design included
+✓ Pagination, loading states, and error handling styled
+✓ Scrollbar styling and accessibility features included
+=============================================================================
+*/
+
 /* reviews.css - Styles for Google Sheets Review System */
 /* Place this in assets/css/reviews.css */
 
