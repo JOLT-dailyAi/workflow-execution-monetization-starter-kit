@@ -2,24 +2,27 @@
 =============================================================================
 CUSTOMIZATION CHECKLIST - free-trial.js
 =============================================================================
-REQUIRED CHANGES:
-☐ Update SHOWCASE_JSON_URL if using absolute URL instead of relative path
-   → Default: 'data/showcase/Showcase.json' (works as-is)
-   → If hosted elsewhere: 'https://your-domain.com/path/to/showcase.json'
+REQUIRED CHANGES (Search for these exact strings):
+☐ Search: "data/showcase/Showcase.json" → Replace with your showcase JSON URL if hosted elsewhere
+☐ Search: "data/FreeTrialKeys/UsedFreeLicenseKeys.json" → Replace with your used keys database URL
 
-WORKFLOW-SPECIFIC CHANGES (Only if not using GitHub repos):
-☐ Replace validateTrialRepository() method with your input validation
-☐ Replace checkRepositoryDuplicate() method with your duplicate checking logic  
-☐ Replace extractRepositoryName() method to extract identifier from your input
-☐ Update error messages from "repository" to your input type
+WORKFLOW-SPECIFIC CHANGES (Only if not using GitHub repos - Search and replace entire functions):
+☐ Search: "validateTrialRepository" → Replace entire function with your input validation
+☐ Search: "checkRepositoryDuplicate" → Replace function with your duplicate checking logic  
+☐ Search: "extractRepositoryName" → Replace function to extract identifier from your input
+☐ Search: "cleanGitHubUrl" → Replace or remove GitHub URL cleaning logic
+☐ Search: "validateGitHubRepositoryAccess" → Replace with your validation function
 
-ANTI-ABUSE CONFIGURATION (Optional):
-☐ Add/remove domains in DISPOSABLE_EMAIL_DOMAINS array
-☐ Adjust VPN detection sensitivity (advanced users only)
+ANTI-ABUSE CONFIGURATION (Optional - Search and modify):
+☐ Search: "DISPOSABLE_EMAIL_DOMAINS" → Add/remove email domains in array
+☐ Search: "CONFIDENCE_THRESHOLD" → This is in improved-vpn-detection.js (advanced users only)
 
-TEXT UPDATES:
-☐ Update error messages from "repository" to your workflow terminology
-☐ Update success messages to match your workflow type
+TEXT UPDATES (Search and replace for your workflow terminology):
+☐ Search: "repository" → Replace with your input type (e.g., "document", "file", "URL")
+☐ Search: "Repository eligible for free trial" → Update success message
+☐ Search: "Free trial is for new repositories only" → Update duplicate message
+☐ Search: "1 Execution Credit Available" → Customize credit message
+☐ Search: "Auto-populated from free trial" → Customize auto-fill message
 
 NO CHANGES NEEDED:
 ✓ All email validation and normalization works as-is
@@ -29,6 +32,7 @@ NO CHANGES NEEDED:
 ✓ All trial key generation and validation works as-is
 =============================================================================
 */
+
 
 class FreeTrialManager {
     constructor() {
