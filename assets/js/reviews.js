@@ -2,27 +2,36 @@
 =============================================================================
 CUSTOMIZATION CHECKLIST - reviews.js
 =============================================================================
-REQUIRED CHANGES:
-☐ Line 9: Replace SHEET_ID with your Google Sheets ID (after /d/ in your sheet URL)
-☐ Line 11: Replace GOOGLE_FORM_URL with your actual Google Form URL
+REQUIRED CHANGES (Search for these exact strings):
+☐ Search: "YOUR_GOOGLE_SHEETS_ID_HERE" → Replace with your Google Sheets ID
+   → Find ID in your sheet URL: docs.google.com/spreadsheets/d/[SHEET_ID]/edit
+☐ Search: "YOUR_GOOGLE_FORM_URL_HERE" → Replace with your Google Form URL
 
-OPTIONAL CHANGES:
-☐ Line 12: Adjust REFRESH_INTERVAL (currently 60 seconds)
-☐ Line 17: Adjust REVIEWS_PER_PAGE for different layouts
-☐ Customize getUserBadge() badges if you have different user types
-☐ Modify review HTML structure in createReviewHTML() if needed
+OPTIONAL CONFIGURATION (Search and modify if needed):
+☐ Search: "REFRESH_INTERVAL = 60000" → Adjust auto-refresh interval (60 seconds)
+☐ Search: "REVIEWS_PER_PAGE = 2" → Adjust number of reviews per page
+☐ Search: "width > 250 ? 3 : 2" → Adjust responsive reviews per page logic
 
-GOOGLE SHEETS SETUP:
+USER BADGE CUSTOMIZATION (Search and modify for your customer types):
+☐ Search: "Gumroad Customer (Paid)" → Update badge text for paid customers
+☐ Search: "Free Trial User" → Update badge text for trial users
+☐ Search: "Referred by a friend" → Update badge text for referrals
+☐ Search: "Found online" → Update badge text for organic users
+
+GOOGLE SHEETS SETUP (Required external setup):
 ☐ Create Google Sheet with columns: Timestamp, Name, User Type, Rating, Review, Use Case, Email, Suggestions
-☐ Make sheet publicly viewable (Share > Anyone with link can view)
-☐ Copy sheet ID from URL: docs.google.com/spreadsheets/d/[SHEET_ID]/edit
+☐ Make sheet publicly viewable: Share → Anyone with link can view
+☐ Copy sheet ID from URL and replace above
+☐ Create Google Form that writes to this sheet
 
 NO CHANGES NEEDED:
-✓ CSV parsing, pagination, and error handling work as-is
-✓ Auto-refresh every 60 seconds included
-✓ Responsive reviews per page adjustment
+✓ CSV parsing and data handling works as-is
+✓ Review display formatting and animations included
+✓ Pagination and responsive design works universally
+✓ Time calculations and error handling included
 =============================================================================
 */
+
 
 // reviews.js - Dynamic Google Sheets Review System
 // Place this in assets/js/reviews.js
