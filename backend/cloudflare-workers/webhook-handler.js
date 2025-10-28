@@ -2,26 +2,29 @@
 =============================================================================
 CUSTOMIZATION CHECKLIST - webhook-handler.js
 =============================================================================
-CRITICAL CHANGES (Line 33):
-☐ Replace "YOUR_BACKEND_URL_HERE" with your n8n webhook URL
+CRITICAL CHANGES (Search for this exact string):
+☐ Search: "YOUR_BACKEND_URL_HERE" → Replace with your n8n webhook URL
    → Example: "https://your-instance.app.n8n.cloud/webhook/your-webhook-id"
+   → Or: "https://your-domain.com/webhook/your-endpoint"
 
 DEPLOYMENT STEPS:
-☐ Create Cloudflare Worker at workers.cloudflare.com
-☐ Paste this code into worker editor
-☐ Replace YOUR_BACKEND_URL_HERE on line 33
-☐ Deploy and copy your worker URL
+☐ Create Cloudflare Worker at workers.cloudflare.com (free tier)  
+☐ Paste this entire code into the worker editor
+☐ Replace YOUR_BACKEND_URL_HERE above
+☐ Deploy the worker and copy your worker URL
 ☐ Update frontend main.js CONFIG with your worker URL
 
 TESTING:
-☐ curl https://your-worker.workers.dev → "✅ API proxy is running"
+☐ Visit https://your-worker.workers.dev → should show "✅ API proxy is running"
+☐ Test API proxy: frontend should connect through worker to your backend
 
 NO CHANGES NEEDED:
-✓ CORS headers work for any domain
-✓ All HTTP methods and error handling included
+✓ CORS headers work for any frontend domain
+✓ All HTTP methods supported (GET, POST, PUT, DELETE)
+✓ Error handling and logging included
+✓ Security headers properly configured
 =============================================================================
 */
-
 
 export default {
   async fetch(request, env, ctx) {
