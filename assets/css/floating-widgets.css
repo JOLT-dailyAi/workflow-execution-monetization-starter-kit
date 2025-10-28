@@ -1,3 +1,28 @@
+/*
+=============================================================================
+CUSTOMIZATION CHECKLIST - floating-widgets.css
+=============================================================================
+LAYOUT CUSTOMIZATION (Optional):
+☐ Lines 11-12: Adjust Discord button position (bottom: 20px, left: 20px)
+☐ Lines 9-10: Adjust Discord button size (70px x 70px)
+☐ Lines 58-59: Adjust GitHub button position (bottom: 20px, right: 20px)
+☐ Lines 56-57: Adjust GitHub button size (70px x 70px)
+☐ Lines 34-41: Adjust mobile sizes (56px) if needed
+
+VISUAL CUSTOMIZATION (Optional):
+☐ Lines 18-19: Adjust hover scaling effect (scale(1.1))
+☐ Lines 66-67: Same for GitHub button hover effect
+☐ Replace GIF images in assets/images/ folder with your own
+
+NO CHANGES NEEDED:
+✓ Positioning and responsive design work for any service
+✓ Sticker-style transparent background works universally  
+✓ Mobile responsiveness included
+✓ All hover effects and transitions included
+✓ Z-index and pointer events properly configured
+=============================================================================
+*/
+
 /* ============================================
    FLOATING WIDGETS - Sticker Style (GIF only)
    ============================================ */
