@@ -2,26 +2,25 @@
 =============================================================================
 CUSTOMIZATION CHECKLIST - main.js
 =============================================================================
-CRITICAL CHANGES (Site won't work without these):
-☐ Replace "YOUR_PROXY_OR_WORKER_URL" with your Cloudflare Worker URL (2 locations)
-   → N8N_FORM_URL: https://your-worker.your-subdomain.workers.dev/validate-license
-   → LICENSE_VALIDATION_ENDPOINT: https://your-worker.your-subdomain.workers.dev/process-request
+CRITICAL CHANGES (Site won't work without these - Search for these exact strings):
+☐ Search: "https://your-worker.your-subdomain.workers.dev/api/webhook/new-repo-request" → Replace with your license validation endpoint
+☐ Search: "https://your-worker.your-subdomain.workers.dev/api/webhook/validate-gumroad-license-key" → Replace with your main processing endpoint
 
-OPTIONAL TIMEZONE/MAINTENANCE:
-☐ Update getISTTime() function if not using IST timezone
-☐ Update isMaintenanceTime() hours if you want different maintenance window
-☐ Update maintenance display text in createMaintenanceTimer()
+OPTIONAL TIMEZONE/MAINTENANCE (Search and modify if needed):
+☐ Search: "getISTTime()" → Modify function if not using IST timezone
+☐ Search: "1:05 AM - 1:15 AM IST" → Update maintenance window display text
+☐ Search: "hours === 1 && minutes >= 5 && minutes < 15" → Update maintenance hours
 
-WORKFLOW-SPECIFIC CHANGES (Only if not using GitHub repos):
-☐ Replace entire validateRepoUrl() function with your input validation
-☐ Replace cleanGitHubUrl() function with your input cleaning logic
-☐ Replace isValidGitHubUrl() function with your validation rules
-☐ Update payload fields in handleFormSubmission() to match your workflow
-☐ Update User-Agent in validateGitHubRepositoryAccess from 'Workflow-Execution-Service'
+WORKFLOW-SPECIFIC CHANGES (Only if not using GitHub repos - Search and replace entire functions):
+☐ Search: "cleanGitHubUrl" → Replace function with your input cleaning logic
+☐ Search: "isValidGitHubUrl" → Replace function with your validation rules  
+☐ Search: "validateGitHubRepositoryAccess" → Replace function with your input validation
+☐ Search: "repository_url: repoUrl" → Update payload field names for your workflow
+☐ Search: "Workflow-Execution-Service" → Update User-Agent string
 
-STORAGE/BRANDING:
-☐ Update localStorage keys from 'workflow_license' to your preferred name
-☐ Update submission_source from 'workflow_execution_web' to your identifier
+STORAGE/BRANDING (Search and customize):
+☐ Search: "workflow_license" → Replace with your preferred localStorage key name
+☐ Search: "workflow_execution_web" → Replace with your service identifier
 
 NO CHANGES NEEDED:
 ✓ All showcase functionality works as-is
