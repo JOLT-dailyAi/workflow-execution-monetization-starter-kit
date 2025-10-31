@@ -230,7 +230,7 @@ The workflow execution economy is just getting started. Most valuable automation
 **Ready to turn your workflows into revenue streams?**
 
 **Get the complete Workflow Execution Monetization Starter Kit:**
-→ [Download Complete Template Package ($147)](YOUR_GUMROAD_LINK)
+→ [Download Complete Template Package ($147)](https://joltdailyai.gumroad.com/l/workflow-execution-monetization-kit)
 → [View on GitHub (Preview)](https://github.com/JOLT-dailyAi/workflow-execution-monetization-starter-kit)
 
 **Includes:**
