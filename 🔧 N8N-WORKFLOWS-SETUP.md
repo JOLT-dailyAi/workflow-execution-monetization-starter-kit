@@ -110,25 +110,25 @@
 ---
 
 ## 🎯 Workflow Integration Map
-Frontend Form Submission
-↓
-[Data Capture Workflow]
-- Validates free trial keys
-- Calls license validator
-- Stores request data
-- Triggers main processor
-↓
-[Main Processor Workflow]
-- Executes your business logic
-- Handles file operations
-- Sends notifications
-- Logs results
-↓
-[Batch Uploader] (Optional)
-- Processes queued requests
-- Bulk operations
-- Status updates
 
+Frontend Form Submission
+           ↓
+    [Data Capture Workflow]
+    • Validates free trial keys
+    • Calls license validator
+    • Stores request data
+    • Triggers main processor
+           ↓
+    [Main Processor Workflow]
+    • Executes your business logic
+    • Handles file operations
+    • Sends notifications
+    • Logs results
+           ↓
+    [Batch Uploader] (Optional)
+    • Processes queued requests
+    • Bulk operations
+    • Status updates
 
 ---
 
