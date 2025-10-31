@@ -110,4 +110,78 @@
 ---
 
 ## 🎯 Workflow Integration Map
+Frontend Form Submission
+↓
+[Data Capture Workflow]
+- Validates free trial keys
+- Calls license validator
+- Stores request data
+- Triggers main processor
+↓
+[Main Processor Workflow]
+- Executes your business logic
+- Handles file operations
+- Sends notifications
+- Logs results
+↓
+[Batch Uploader] (Optional)
+- Processes queued requests
+- Bulk operations
+- Status updates
+
+
+---
+
+## 🚨 Common Issues & Solutions
+
+| Problem | Solution |
+|---------|----------|
+| **"Webhook not found" errors** | • Check n8n webhook URLs are publicly accessible<br>• Update webhook URLs in your frontend |
+| **"Credentials not found"** | • Import and configure credentials before activating workflows<br>• Match credential IDs in placeholder replacement |
+| **File permission errors** | • Ensure `YOUR_DATA_DIRECTORY_PATH` exists and is writable<br>• Check folder permissions (755 or 777) |
+| **Discord messages not posting** | • Verify bot has permissions in target channels<br>• Check Discord server and channel IDs are correct |
+| **Gumroad validation failing** | • Verify product ID is correct<br>• Check Gumroad API credentials |
+| **Workflows not triggering** | • Ensure workflows are activated<br>• Check webhook URLs match frontend configuration |
+
+---
+
+## 📁 Recommended Directory Structure
+
+YOUR_DATA_DIRECTORY_PATH/
+├── incoming/ # New requests from frontend
+├── processing/ # Currently being processed
+├── completed/ # Successfully processed
+├── failed/ # Failed processing attempts
+├── FreeTrialKeys/ # Trial key management
+├── showcase/ # Display data for frontend
+└── logs/ # System logs (optional)
+
+
+**Create these directories before activating workflows for smooth operation.**
+
+---
+
+## 🎉 You're Ready!
+
+**Once configured, your system will:**
+- ✅ Accept form submissions from your frontend
+- ✅ Validate payments and manage credits
+- ✅ Process requests with your custom logic
+- ✅ Send notifications and track results
+- ✅ Handle errors gracefully
+- ✅ Generate revenue automatically
+
+**🚀 Time to start earning from your workflows!**
+
+---
+
+## 💬 Need Help?
+
+- **Technical setup issues:** Check the troubleshooting table above
+- **Business logic questions:** Join our Discord community
+- **Frontend integration:** Refer to the main QUICKSTART.md guide
+
+**Discord Support Server: https://discord.gg/AEJvSEWcZk**
+
+---
 
