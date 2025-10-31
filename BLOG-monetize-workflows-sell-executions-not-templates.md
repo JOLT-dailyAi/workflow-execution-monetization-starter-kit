@@ -198,7 +198,7 @@ The workflow execution economy is huge and mostly untapped. Most creators are st
 - n8n Cloud or self-hosted instance
 - Basic HTML/JavaScript knowledge for customization
 
-**Template cost: $147 one-time** (includes everything + updates)
+**Template cost: $197 one-time** (includes everything + updates)
 **Monthly operating cost: $0** (all platforms have generous free tiers)
 
 ## Getting Started
@@ -230,7 +230,7 @@ The workflow execution economy is just getting started. Most valuable automation
 **Ready to turn your workflows into revenue streams?**
 
 **Get the complete Workflow Execution Monetization Starter Kit:**
-→ [Download Complete Template Package ($147)](https://joltdailyai.gumroad.com/l/workflow-execution-monetization-kit)
+→ [Download Complete Template Package ($197)](https://joltdailyai.gumroad.com/l/workflow-execution-monetization-kit)
 → [View on GitHub (Preview)](https://github.com/JOLT-dailyAi/workflow-execution-monetization-starter-kit)
 
 **Includes:**
