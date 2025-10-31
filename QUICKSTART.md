@@ -101,4 +101,14 @@
 
 **No consulting needed - everything is included and documented.**
 
+**💬 Community Support Available**
+Join our private Discord server for:
+- Community discussions with other template users
+- Sharing success stories and tips
+- Quick troubleshooting help from peers
+- Updates and new feature announcements
+
+*While the template is designed to be self-sufficient, we believe in supporting our customers' success.*
+
+**Discord Support Server: https://discord.gg/AEJvSEWcZk**
 ---
